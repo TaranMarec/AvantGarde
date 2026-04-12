@@ -9,6 +9,10 @@
     --slate-600: #475569;
     --slate-900: #0f172a;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 html {
     /* Empêche le saut de mise en page sur PC */
     scrollbar-gutter: stable;
