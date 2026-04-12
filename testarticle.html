@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - L'IA selon L'Avant-Garde & Le Diplo</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&family=Libre+Franklin:wght@300;600&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <title>L'Avant-Garde – Maquette édition hebdo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+
+
+        .sur-titre {
+            text-transform: uppercase;
+            font-family: 'Libre+Franklin', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #9d0000;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            line-height: 1;
+            margin: 0 0 20px 0;
+            font-weight: 900;
+        }
+
+        .chapeau {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.4;
+            max-width: 90%;
+        }
+
+        /* Gestion de l'image (Style Diplo) */
+        .article-figure {
+            margin: 30px 0;
+            padding: 0;
+        }
+
+        .article-figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(10%) contrast(1.1); /* Pour le côté papier journal */
+        }
+
+        .article-figure figcaption {
+            font-size: 0.8rem;
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.3;
+            border-left: 3px solid #9d0000;
+            padding-left: 10px;
+        }
+
+        .credit {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+
+        /* Corps de l'article */
+        .meta {
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .auteur {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .article-content {
+            font-size: 1.3rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .article-content p:first-of-type::first-letter {
+            float: left;
+            font-size: 5.5rem;
+            line-height: 0.8;
+            padding-top: 6px;
+            padding-right: 10px;
+
+            font-weight: 700;
+        }
+
+        h2 {
+
+            font-size: 1.9rem;
+            margin-top: 45px;
+            border-top: 1px solid #000;
+            padding-top: 15px;
+        }
+
+        .encadre {
+            background-color: #f1f1ee;
+            padding: 25px;
+            border: 1px solid #dcdcdc;
+            font-size: 1.1rem;
+            margin: 40px 0;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .article-content { font-size: 1.15rem; }
+        }
+    </style>
+
+</head>
+<body class="bg-slate-100">
+
+  <header class="main-header">
+    <div class="container header-content">
+      <div class="logo-wrapper">
+        <img src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/LAVANTGARDE%20ROUGE.png&fileId=99580&x=1920&y=1200&a=true&etag=76a15382936ce587a4bb50430fb154a3" alt="Logo L'Avant-Garde" class="logo-img">
+        <div>
+          <p class="tagline">Journal des jeunes communistes</p>
+          <!--<p class="brand-name">L'<span class="text-red">Avant-Garde</span></p>-->
+        </div>
+      </div>
+
+      <nav class="main-nav">
+         <ul class="menu">
+          <li >
+            <a href="#">FRANCE</a>
+            </li>
+          <li><a href="#">INTERNATIONAL</a></li>
+          <li><a href="#">CULTURE</a></li>
+         <li><a href="#">SPORT</a></li> 
+          <li><a href="#">Archive</a></li> 
+          <li><a href="#">À propos</a></li>
+          <li><a href="#"><img src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/AG%2B%20Noir.png&fileId=99578&x=1920&y=1200&a=true&etag=3ccbfb6020bdab36d75ac08b395ed1fc"class="logo-AG"></a></li>
+        </ul>
+
+        <button class="burger" id="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </button> 
+        <script>
+        const burger = document.getElementById('burger');
+        const nav = document.querySelector('.menu');
+
+        burger.addEventListener('click', () => {
+            // Toggle du menu
+            nav.classList.toggle('nav-active');
+            
+            // Animation du bouton burger
+            burger.classList.toggle('toggle');
+        });
+    </script>
+      </nav>
+         
+    <!--</div>
+            <div class="category-bar">
+          <nav class="category-nav">
+                <ul>
+                    <li><a href="#">Informatique</a></li>
+                    <li><a href="#">Smartphone</a></li>
+                    <li><a href="#">Audio</a></li>
+                    <li><a href="#">Photo</a></li>
+                    <li><a href="#">Promos %</a></li>
+                </ul>
+          </nav>
+        </div>-->
+  </header>
+
+    <div class="container">
+        <header>
+            <span class="sur-titre">Révolution Technologique</span>
+            <h1>L'intelligence artificielle : la fin du travail humain ?</h1>
+            <p class="chapeau">
+                Entre promesses d'émancipation et menaces de chômage de masse, l'IA bouleverse le marché de l'emploi. Une analyse critique des enjeux sociaux.
+            </p>
+        </header>
+
+        <figure class="article-figure">
+            <img src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F03%2FIA.png&w=3840&q=75" alt="Illustration IA">
+            <figcaption>
+                L'intelligence artificielle, entre fantasme et réalité technologique. 
+                <span class="credit">Crédit : L'AVANT-GARDE</span>
+            </figcaption>
+        </figure>
+
+        <div class="meta">
+            Par <span class="auteur">Pierre Dubois</span>, avril 2026.
+        </div>
+
+        <article class="article-content">
+            <p>
+                Dans les couloirs des laboratoires de recherche, la musique est toujours la même. On parle de « rationalisation », de « modernisation » et de « gains de productivité ». Pourtant, derrière ce jargon technocratique, la réalité sociale décrite par les travailleurs est tout autre. L'avènement de l'IA générative et de l'automatisation avancée fragilise les secteurs de l'emploi, du journalisme aux chaînes de production.
+            </p>
+
+            <p>
+                Le secteur de l'énergie, de plus en plus géré par des algorithmes optimisés, illustre cette dérive : la recherche de rentabilité prime sur le maintien d'emplois qualifiés. La question de la renationalisation complète des infrastructures stratégiques pour garantir l'accès à un service public de base, géré par l'humain, devient urgente.
+            </p>
+
+            <h2>Le dogme de l'automatisation au détriment de l'humain</h2>
+            
+            <p>
+                Il ne s'agit pas seulement d'un progrès technique, mais d'un choix de société. En privilégiant l'algorithme sur le savoir-faire humain, les entreprises organisent une nouvelle forme de précarité numérique.
+            </p>
+
+            <div class="encadre">
+                <strong>À LIRE AUSSI :</strong><br>
+                L'IA et la fracture numérique en milieu rural : un dossier exclusif de L'Avant-Garde sur les territoires oubliés de la tech.
+            </div>
+
+            <p>
+                Face à cette offensive, la riposte sociale doit intégrer la maîtrise des outils de production technologique. L'enjeu n'est pas de refuser le progrès, mais de le soumettre à l'intérêt général plutôt qu'aux dividendes des géants de la Silicon Valley.
+            </p>
+        </article>
+    </div>
+
+</body>
+</html>
