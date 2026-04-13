@@ -208,8 +208,6 @@
               img.src = finalVideo.snippet.thumbnails.high.url;
               img.style.display = 'block';
 
-              console.log("Vidéo affichée :", finalVideo.snippet.title);
-
             } catch (error) {
               console.error("Erreur de chargement :", error);
               document.getElementById('yt-title').innerText = "Erreur de connexion";
