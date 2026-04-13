@@ -1,88 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <title>L'Avant-Garde – Maquette édition hebdo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>L'Avant-Garde – Maquette édition hebdo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-slate-100">
 
   <header class="main-header">
     <div class="container header-content">
       <div class="logo-wrapper">
-        <a href="./index.html">
-        <img src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/LAVANTGARDE%20ROUGE.png&fileId=99580&x=1920&y=1200&a=true&etag=76a15382936ce587a4bb50430fb154a3" alt="Logo L'Avant-Garde" class="logo-img">
-        </a>
-        <div>
+        <a href="./index.html" style="display: block;">
+          <img
+            src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/LAVANTGARDE%20ROUGE.png&fileId=99580&x=1920&y=1200&a=true&etag=76a15382936ce587a4bb50430fb154a3"
+            alt="Logo L'Avant-Garde" class="logo-img">
           <p class="tagline">Journal des jeunes communistes</p>
-          <!--<p class="brand-name">L'<span class="text-red">Avant-Garde</span></p>-->
-        </div>
+        </a>
       </div>
 
       <nav class="main-nav">
-         <ul class="menu">
-          <li >
+        <ul class="menu">
+          <li>
             <a href="./categorie.html">FRANCE</a>
-            </li>
+          </li>
           <li><a href="./categorie.html">INTERNATIONAL</a></li>
           <li><a href="./categorie.html">CULTURE</a></li>
-         <li><a href="./categorie.html">SPORT</a></li> 
-          <li><a href="./categorie.html">Archive</a></li> 
+          <li><a href="./categorie.html">SPORT</a></li>
+          <li><a href="./categorie.html">Archive</a></li>
           <li><a href="#">À propos</a></li>
-          <li ><a href="./Linktree.html"><img src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/AG%2B%20Noir.png&fileId=99578&x=1920&y=1200&a=true&etag=3ccbfb6020bdab36d75ac08b395ed1fc"class="logo-AG"></a></li>
+          <li><a href="./Linktree.html"><img
+                src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/AG%2B%20Noir.png&fileId=99578&x=1920&y=1200&a=true&etag=3ccbfb6020bdab36d75ac08b395ed1fc"
+                class="logo-AG"></a></li>
         </ul>
 
         <button class="burger" id="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </button> 
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </button>
         <script>
-        const burger = document.getElementById('burger');
-        const nav = document.querySelector('.menu');
+          const burger = document.getElementById('burger');
+          const nav = document.querySelector('.menu');
 
-        burger.addEventListener('click', () => {
+          burger.addEventListener('click', () => {
             // Toggle du menu
             nav.classList.toggle('nav-active');
-
             // Toggle du scroll sur le body
-             document.body.classList.toggle('no-scroll');
-            
+            document.body.classList.toggle('no-scroll');
             // Animation du bouton burger
             burger.classList.toggle('toggle');
-        });
-    </script>
+          });
+        </script>
       </nav>
-         
-          </div>
-            <div class="category-bar">
-          <nav class="category-nav">
-                <ul>
-                    <li><a href="#">Afrique</a></li>
-                    <li><a href="#">Amériques</a></li>
-                    <li><a href="#">Asie</a></li>
-                    <li><a href="#">Europe</a></li>
-                    <li><a href="#">Monde</a></li>
-                    <li><a href="#">Palestine</a></li>
-                </ul>
-          </nav>
-        </div>
-  </header>
 
+  </header>
+   <div class="category-bar">
+      <nav class="category-nav">
+        <ul>
+          <li><a href="#">Afrique</a></li>
+          <li><a href="#">Amériques</a></li>
+          <li><a href="#">Asie</a></li>
+          <li><a href="#">Europe</a></li>
+          <li><a href="#">Monde</a></li>
+          <li><a href="#">Palestine</a></li>
+        </ul>
+      </nav>
+    </div>
   <main class="container main-content">
+  <header class="edition-header">
+    <div class="edition-badge">
+      <span class="edition-type">INTERNATIONAL</span>
+
+
+    </div>
+  </header>
     <div class="grid-layout">
-      
+
       <section class="content-area">
 
 
-       <!--<article class="card hero-article">
-          <a href="#" class="hero-image">
+        <article class="card hero-article">
+          <a href="./article.html" class="hero-image">
             <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/04/Plan-de-travail-2.png" alt="Venezuela">
           </a>
           <div class="card-body">
@@ -91,56 +97,65 @@
               <span class="author">Par Assan Lakehoul</span>
             </div>
             <h1 class="title-xl">
-              <a href="#">Le Venezuela dans la ligne de mire de l’empire</a>
+              <a href="./article.html">Le Venezuela dans la ligne de mire de l’empire</a>
             </h1>
             <p class="excerpt">
-              Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela : 
+              Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
               menace d’intervention militaire, mise à prix de la tête du président...
             </p>
-            <a href="#" class="read-more">Lire l’édito</a>
+            <a href="./article.html" class="read-more">Lire l’édito</a>
           </div>
         </article>
---> 
+
         <div class="articles-grid">
           <article class="card">
-            <a href="#" class="thumb"><img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/12/Sans-titre-8.png" alt="COP30"></a>
+            <a href="./article.html" class="thumb"><img
+                src="https://wp.lavantgarde.fr/wp-content/uploads/2025/12/Sans-titre-8.png" alt="COP30"></a>
             <div class="p-4">
               <p class="category-text">Climat</p>
-              <h2 class="title-md"><a href="#">À la COP30, les États insulaires, acteurs de leur propre survie</a></h2>
+              <h2 class="title-md"><a href="./article.html">À la COP30, les États insulaires, acteurs de leur propre
+                  survie</a></h2>
               <p class="author-sm">Par Tehei</p>
             </div>
           </article>
 
           <article class="card">
-            <a href="#" class="thumb"><img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/12/Train.png" alt="SNCF"></a>
+            <a href="./article.html" class="thumb"><img
+                src="https://wp.lavantgarde.fr/wp-content/uploads/2025/12/Train.png" alt="SNCF"></a>
             <div class="p-4">
               <p class="category-text">Transport</p>
-              <h2 class="title-md"><a href="#">SNCF : quand le Grand Est déraille</a></h2>
+              <h2 class="title-md"><a href="./article.html">SNCF : quand le Grand Est déraille</a></h2>
               <p class="author-sm">Par Alexian</p>
             </div>
           </article>
 
           <article class="card">
-    <a href="#" class="thumb">
-      <img src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F04%2FUniversite_de_Franche-Comte.jpg&w=3840&q=75" alt="Université">
-    </a>
-    <div class="p-4">
-      <p class="category-text">Enseignement</p>
-      <h2 class="title-md"><a href="#">5 700 places en moins à l’université pour la rentrée 2026</a></h2>
-      <p class="author-sm">Par Rédaction</p>
-    </div>
-  </article>
+            <a href="./article.html" class="thumb">
+              <img
+                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F04%2FUniversite_de_Franche-Comte.jpg&w=3840&q=75"
+                alt="Université">
+            </a>
+            <div class="p-4">
+              <p class="category-text">Enseignement</p>
+              <h2 class="title-md"><a href="./article.html">5 700 places en moins à l’université pour la rentrée
+                  2026</a></h2>
+              <p class="author-sm">Par Rédaction</p>
+            </div>
+          </article>
 
-  <article class="card">
-    <a href="#" class="thumb">
-      <img src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F03%2FIA.png&w=3840&q=75" alt="Lutte sociale">
-    </a>
-    <div class="p-4">
-      <p class="category-text">Social</p>
-      <h2 class="title-md"><a href="#">À Arc France, un sauvetage au prix fort pour les salariés</a></h2>
-      <p class="author-sm">Par Rédaction</p>
-    </div>
-  </article>
+          <article class="card">
+            <a href="./article.html" class="thumb">
+              <img
+                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F03%2FIA.png&w=3840&q=75"
+                alt="Lutte sociale">
+            </a>
+            <div class="p-4">
+              <p class="category-text">Social</p>
+              <h2 class="title-md"><a href="./article.html">À Arc France, un sauvetage au prix fort pour les
+                  salariés</a></h2>
+              <p class="author-sm">Par Rédaction</p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -151,57 +166,57 @@
           </div>
         </div>
 
-<article id="yt-block" class="card p-4">
-  <p class="sidebar-label">Sur notre chaîne YouTube</p>
-  <h2 id="yt-title" class="sidebar-title">Chargement...</h2>
-  <a href="#" id="yt-link" class="yt-thumb" target="_blank">
-    <img id="yt-thumb-img" src="" alt="Miniature" style="display:none; width:100%; border-radius:8px;">
-    <div class="play-btn"><span>▶</span></div>
-  </a>
-</article>
+        <article id="yt-block" class="card p-4">
+          <p class="sidebar-label">Sur notre chaîne YouTube</p>
+          <h2 id="yt-title" class="sidebar-title">Chargement...</h2>
+          <a href="#" id="yt-link" class="yt-thumb" target="_blank">
+            <img id="yt-thumb-img" src="" alt="Miniature" style="display:none; width:100%; border-radius:8px;">
+            <div class="play-btn"><span>▶</span></div>
+          </a>
+        </article>
 
 
-<script>
-(async function() {
-    const API_KEY = 'AIzaSyDWH_Ovncn32d1Prtqo4t0cVOfnOxFTUmQ';
-    const PLAYLIST_ID = 'PLMc3QN4Bpy7r6s_6mbCti-iO6puJSEOLD'; // Mettez ici l'ID de la playlist cible
+        <script>
+          (async function () {
+            const API_KEY = 'AIzaSyDWH_Ovncn32d1Prtqo4t0cVOfnOxFTUmQ';
+            const PLAYLIST_ID = 'PLMc3QN4Bpy7r6s_6mbCti-iO6puJSEOLD'; // Mettez ici l'ID de la playlist cible
 
-    try {
-        // 1. On récupère les 10 derniers items de la PLAYLIST
-        const listRes = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=10&key=${API_KEY}`);
-        const listData = await listRes.json();
+            try {
+              // 1. On récupère les 10 derniers items de la PLAYLIST
+              const listRes = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=10&key=${API_KEY}`);
+              const listData = await listRes.json();
 
-        if (!listData.items || listData.items.length === 0) {
-            document.getElementById('yt-title').innerText = "Playlist vide ou introuvable";
-            return;
-        }
+              if (!listData.items || listData.items.length === 0) {
+                document.getElementById('yt-title').innerText = "Playlist vide ou introuvable";
+                return;
+              }
 
-        // On extrait les IDs des vidéos pour vérifier leur durée
-        const videoIds = listData.items.map(item => item.snippet.resourceId.videoId).join(',');
-        
-        // 3. On récupère les détails techniques (durée)
-        const videoRes = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoIds}&key=${API_KEY}`);
-        const videoData = await videoRes.json();
-        // On prend la vidéo longue trouvée, sinon la toute première par défaut
-        const finalVideo = videoData.items[0];
+              // On extrait les IDs des vidéos pour vérifier leur durée
+              const videoIds = listData.items.map(item => item.snippet.resourceId.videoId).join(',');
 
-        // 4. Mise à jour de l'interface
-        document.getElementById('yt-title').innerText = finalVideo.snippet.title;
-        document.getElementById('yt-link').href = `https://www.youtube.com/watch?v=${finalVideo.id}`;
-        
-        const img = document.getElementById('yt-thumb-img');
-        img.src = finalVideo.snippet.thumbnails.high.url;
-        img.style.display = 'block';
+              // 3. On récupère les détails techniques (durée)
+              const videoRes = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoIds}&key=${API_KEY}`);
+              const videoData = await videoRes.json();
+              // On prend la vidéo longue trouvée, sinon la toute première par défaut
+              const finalVideo = videoData.items[0];
 
-        console.log("Vidéo affichée :", finalVideo.snippet.title);
+              // 4. Mise à jour de l'interface
+              document.getElementById('yt-title').innerText = finalVideo.snippet.title;
+              document.getElementById('yt-link').href = `https://www.youtube.com/watch?v=${finalVideo.id}`;
 
-    } catch (error) {
-        console.error("Erreur de chargement :", error);
-        document.getElementById('yt-title').innerText = "Erreur de connexion";
-    }
-  }
-)();
-</script>
+              const img = document.getElementById('yt-thumb-img');
+              img.src = finalVideo.snippet.thumbnails.high.url;
+              img.style.display = 'block';
+
+              console.log("Vidéo affichée :", finalVideo.snippet.title);
+
+            } catch (error) {
+              console.error("Erreur de chargement :", error);
+              document.getElementById('yt-title').innerText = "Erreur de connexion";
+            }
+          }
+          )();
+        </script>
         <article class="card overflow-hidden">
           <div class="p-4 border-b">
             <p class="sidebar-label">Édition trimestrielle</p>
@@ -213,60 +228,48 @@
       </aside>
 
       <section class="newsletter-card">
-        <p class="newsletter-tag">Communauté</p>
         <h2>L'Avant-Garde</h2>
         <p class="newsletter-desc">Décryptages politiques et actus militantes : reçois nos infos où tu veux.</p>
 
-        <form class="newsletter-form">
-            <input type="email" placeholder="Ton adresse email" required>
-            <button type="submit" class="btn-email">S'abonner à la newsletter</button>
+        <form class="newsletter-form" action="./newsLetter.html" method="get">
+          <input type="email" placeholder="Ton adresse email" required>
+          <button type="submit" class="btn-email" href="./newsLetter.html">S'abonner à la newsletter</button>
         </form>
 
         <div class="divider">Ou nous suivre sur nos canaux</div>
 
         <div class="social-grid">
-            <a href="#" class="social-btn whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <a href="#" class="social-btn telegram">
-                <i class="fab fa-telegram-plane"></i> Telegram
-            </a>
-            <a href="#" class="social-btn instagram">
-                <i class="fab fa-instagram"></i> Suivre sur Instagram
-            </a>
+          <a href="#" class="social-btn whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <a href="#" class="social-btn telegram">
+            <i class="fab fa-telegram-plane"></i> Telegram
+          </a>
+          <a href="#" class="social-btn instagram">
+            <i class="fab fa-instagram"></i> Suivre sur Instagram
+          </a>
         </div>
-    </section>
+      </section>
     </div>
-<!--
-    <section class="newsletter-section">
-      <div class="newsletter-card">
-        <p class="newsletter-tag">Je m’abonne à la newsletter</p>
-        <h2>Recevoir L’Avant-Garde chaque semaine</h2>
-        <p class="newsletter-desc">Sélection d’articles et décryptages politiques dans ta boîte mail.</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="mon.adresse@email.fr">
-          <button type="submit">Je m’abonne</button>
-        </form>
-      </div>
-    </section>-->
-        
+
   </main>
-<footer class="main-footer">
-  <div class="container footer-content">
-    
-    <div class="footer-info">
-      <p>&copy; 2026 L'Avant-Garde. Tous droits réservés.</p>
-      <p class="footer-tagline">Journal des jeunes communistes.</p>
+  <footer class="main-footer">
+    <div class="container footer-content">
+
+      <div class="footer-info">
+        <p>&copy; 2026 L'Avant-Garde. Tous droits réservés.</p>
+        <p class="footer-tagline">Journal des jeunes communistes.</p>
+      </div>
+
+      <nav class="footer-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Contact</a>
+        <a href="#">Plan du site</a>
+      </nav>
+
     </div>
-
-    <nav class="footer-links">
-      <a href="#">Mentions légales</a>
-      <a href="#">Politique de confidentialité</a>
-      <a href="#">Contact</a>
-      <a href="#">Plan du site</a>
-    </nav>
-
-  </div>
-</footer>
+  </footer>
 </body>
+
 </html>

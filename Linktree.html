@@ -1,273 +1,97 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AG+ | L'Avant-Garde</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sytleLinktree.css">
     <style>
-        :root {
-            --ag-red: #b91c1c;
-            --ag-red-hover: #991b1b;
-            --dark-bg: #000000;
-            --card-bg: #111111;
-            --text-main: #ffffff;
-            --text-dim: #a0a0a0;
-            --border-color: #222222;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            padding: 2rem 1rem;
-            min-height: 100vh;
-        }
-
-        .linktree-container {
-            width: 100%;
-            max-width: 480px;
-            text-align: center;
-        }
-
-        /* LOGO & HEADER */
-        .logo-main {
-            height: 70px;
-            margin-bottom: 0.5rem;
-        }
-
-        .profile-title {
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin-bottom: 0.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .tagline {
-            color: var(--text-dim);
-            font-size: 0.85rem;
-            margin-bottom: 2.5rem;
-        }
-
-        /* YOUTUBE BLOCK */
-        .yt-section-header {
-            font-size: 1.4rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .yt-card {
-            background: var(--card-bg);
-            border-radius: 1.2rem;
-            padding: 0.8rem;
-            margin-bottom: 2rem;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s;
-        }
-
-        .yt-card:hover { transform: scale(1.02); }
-
-        .yt-thumb-wrapper {
-            position: relative;
-            border-radius: 0.8rem;
-            overflow: hidden;
-            aspect-ratio: 16/9;
-            background: #111;
-        }
-
-        .yt-thumb-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .play-overlay {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0,0,0,0.3);
-        }
-
-        .play-overlay i {
-            color: var(--ag-red);
-            font-size: 3.5rem;
-            background: white;
-            border-radius: 50%;
-            padding: 5px;
-        }
-
-        #yt-title {
-            margin-top: 1rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: block;
-            text-decoration: none;
-            color: var(--text-main);
-            padding: 0 5px;
-        }
-
-        /* BUTTONS LIST */
-        .links-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        .btn-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: var(--card-bg);
-            padding: 1.1rem;
-            border-radius: 1rem;
-            text-decoration: none;
-            font-weight: 700;
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            transition: all 0.2s ease;
-        }
-
-        .btn-link:hover {
-            background: #1a1a1a;
-            border-color: var(--ag-red);
-        }
-
-        .btn-link i { font-size: 1.4rem; }
-
-        /* COLORS */
-        .btn-spotify i { color: #1DB954; }
-        .btn-deezer i { color: #ef5466; }
-
-        .section-title {
-            font-size: 0.8rem;
-            font-weight: 800;
-            color: var(--text-dim);
-            text-transform: uppercase;
-            margin: 1.5rem 0 0.8rem;
-            letter-spacing: 1px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
-        }
-
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-
-        .social-icon {
-            background: var(--card-bg);
-            padding: 1rem;
-            border-radius: 1rem;
-            border: 1px solid var(--border-color);
-            font-size: 1.3rem;
-            color: var(--text-main);
-            transition: 0.2s;
-        }
-
-        .social-icon:hover {
-            color: var(--ag-red);
-            border-color: var(--ag-red);
-        }
-
-        /* FOOTER */
-        .back-link {
-            margin-top: 3rem;
-            display: inline-block;
-            color: var(--text-dim);
-            text-decoration: underline;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
+      
     </style>
 </head>
+
 <body>
 
-<div class="linktree-container">
-    <img src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/AG%2B%20Noir.png&fileId=99578&x=1920&y=1200&a=true&etag=3ccbfb6020bdab36d75ac08b395ed1fc" alt="Logo AG+" class="logo-main" style="filter: invert(1);">
-    <h1 class="profile-title">L'Avant-Garde</h1>
-    <p class="tagline">Le journal des jeunes communistes</p>
+    <div class="linktree-container">
+        <img src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/AG%2B%20Noir.png&fileId=99578&x=1920&y=1200&a=true&etag=3ccbfb6020bdab36d75ac08b395ed1fc"
+            alt="Logo AG+" class="logo-main" style="filter: invert(1);">
+        <h1 class="profile-title">L'Avant-Garde</h1>
+        <p class="tagline">Le journal des jeunes communistes</p>
 
-    <h2 class="yt-section-header">NOTRE CHAÎNE YOUTUBE :</h2>
-    <div class="yt-card">
-        <a href="#" id="yt-link" target="_blank">
-            <div class="yt-thumb-wrapper">
-                <img id="yt-thumb-img" src="" alt="Thumbnail" style="display:none;">
-                <div class="play-overlay"><i class="fab fa-youtube"></i></div>
-            </div>
-            <span id="yt-title">Chargement de la dernière vidéo...</span>
-        </a>
-    </div>
-
-    <div class="links-wrapper">
-        <p class="section-title">Nous écouter</p>
-        <a href="#" class="btn-link btn-spotify">
-            <i class="fab fa-spotify"></i> Podcast sur Spotify
-        </a>
-        <a href="#" class="btn-link btn-deezer">
-            <i class="fab fa-deezer"></i> Podcast sur Deezer
-        </a>
-
-        <p class="section-title">Réseaux Sociaux</p>
-        <div class="social-grid">
-            <a href="https://www.tiktok.com/@lavantgarde.plus" class="social-icon"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/avantgarde_journal/" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/lavantgarde.fr/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://x.com/Journal_AG" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+        <h2 class="yt-section-header">NOTRE CHAÎNE YOUTUBE :</h2>
+        <div class="yt-card">
+            <a href="#" id="yt-link" target="_blank">
+                <div class="yt-thumb-wrapper">
+                    <img id="yt-thumb-img" src="" alt="Thumbnail" style="display:none;">
+                    <div class="play-overlay"><i class="fab fa-youtube"></i></div>
+                </div>
+                <span id="yt-title">Chargement de la dernière vidéo...</span>
+            </a>
         </div>
 
-        <p class="section-title">Communauté</p>
-        <a href="https://whatsapp.com/channel/0029VbBUkulGk1FlZDwE3v1W" class="btn-link">
-            <i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp
-        </a>
-        <a href="https://t.me/lavantgardejournal" class="btn-link">
-            <i class="fab fa-telegram-plane" style="color:#0088cc;"></i> Telegram
-        </a>
+        <div class="links-wrapper">
+            <p class="section-title">Nous écouter</p>
+            <a href="#" class="btn-link btn-spotify">
+                <i class="fab fa-spotify"></i> Podcast sur Spotify
+            </a>
+            <a href="#" class="btn-link btn-deezer">
+                <i class="fab fa-deezer"></i> Podcast sur Deezer
+            </a>
+
+            <p class="section-title">Réseaux Sociaux</p>
+            <div class="social-grid">
+                <a href="https://www.tiktok.com/@lavantgarde.plus" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/avantgarde_journal/" class="social-icon"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/lavantgarde.fr/" class="social-icon"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/Journal_AG" class="social-icon"><i class="fab fa-x-twitter"></i></a>
+            </div>
+
+            <p class="section-title">Communauté</p>
+            <a href="https://whatsapp.com/channel/0029VbBUkulGk1FlZDwE3v1W" class="btn-link">
+                <i class="fab fa-whatsapp" style="color:#25D366;"></i> WhatsApp
+            </a>
+            <a href="https://t.me/lavantgardejournal" class="btn-link">
+                <i class="fab fa-telegram-plane" style="color:#0088cc;"></i> Telegram
+            </a>
+        </div>
+
+        <a href="./index.html" class="back-link">Retour au site principal</a>
     </div>
 
-    <a href="./index.html" class="back-link">Retour au site principal</a>
-</div>
+    <script>
+        /** * Script YouTube Dynamique
+         */
+        (async function () {
+            const API_KEY = 'AIzaSyDWH_Ovncn32d1Prtqo4t0cVOfnOxFTUmQ';
+            const PLAYLIST_ID = 'PLMc3QN4Bpy7r6s_6mbCti-iO6puJSEOLD';
 
-<script>
-/** * Script YouTube Dynamique
- */
-(async function() {
-    const API_KEY = 'AIzaSyDWH_Ovncn32d1Prtqo4t0cVOfnOxFTUmQ'; 
-    const PLAYLIST_ID = 'PLMc3QN4Bpy7r6s_6mbCti-iO6puJSEOLD'; 
+            try {
+                const listRes = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=1&key=${API_KEY}`);
+                const listData = await listRes.json();
 
-    try {
-        const listRes = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=1&key=${API_KEY}`);
-        const listData = await listRes.json();
+                if (listData.items && listData.items.length > 0) {
+                    const video = listData.items[0].snippet;
+                    const videoId = video.resourceId.videoId;
 
-        if (listData.items && listData.items.length > 0) {
-            const video = listData.items[0].snippet;
-            const videoId = video.resourceId.videoId;
+                    document.getElementById('yt-title').innerText = video.title;
+                    document.getElementById('yt-link').href = `https://www.youtube.com/watch?v=${videoId}`;
 
-            document.getElementById('yt-title').innerText = video.title;
-            document.getElementById('yt-link').href = `https://www.youtube.com/watch?v=${videoId}`;
-            
-            const img = document.getElementById('yt-thumb-img');
-            img.src = video.thumbnails.high.url;
-            img.style.display = 'block';
-        }
-    } catch (error) {
-        console.error("Erreur YouTube:", error);
-        document.getElementById('yt-title').innerText = "Voir nos dernières vidéos sur YouTube";
-    }
-})();
-</script>
+                    const img = document.getElementById('yt-thumb-img');
+                    img.src = video.thumbnails.high.url;
+                    img.style.display = 'block';
+                }
+            } catch (error) {
+                console.error("Erreur YouTube:", error);
+                document.getElementById('yt-title').innerText = "Voir nos dernières vidéos sur YouTube";
+            }
+        })();
+    </script>
 
 </body>
+
 </html>
