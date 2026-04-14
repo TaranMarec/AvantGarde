@@ -15,6 +15,7 @@ body {
 width: 100%;
     margin: 0;
     padding: 0;
+
     overflow-x: hidden;
 }
 
@@ -42,6 +43,7 @@ body {
 }
 li {
   list-style: none;
+  
 }
 a {
     text-decoration: none;
@@ -54,38 +56,86 @@ a {
     max-width: 1152px;
     margin: 0 auto;
     padding: 0.5rem;
+    
 }
 
 /* HEADER */
-.main-header {
+#main-header {
     background: white;
     border-bottom: 1px solid var(--slate-200);
-    position: relative;
+    position: fixed;
     z-index: 900;
     width: 100%;
 
 
 }
+.main-content {
+    margin-top: 150px; /* Ajuste cette valeur selon la hauteur de ton logo */
+}
 
+/* Sur mobile, on réduit l'espace car le logo est plus petit */
+@media screen and (max-width: 768px) {
+    .main-content {
+        margin-top: 140px;
+    }
+}
 .header-content {
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column; 
+    padding-top: 0;
+    
 }
-
+#main-header.scrolled .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction:row;
+    
+}
 .logo-wrapper {
     display: flex;
     align-items: center;
     position: relative;
+    padding: 0.5rem;
+    z-index: 1;
+
+      align-items: center;
+    justify-content: center;
+
+    
+}
+#main-header.scrolled .logo-wrapper { 
+    display: flex;
+    position: relative;
+    padding: 0;
     z-index: 1;
 }
 
+.logo-link {
+  display: flex;          
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+}
+#main-header.scrolled .logo-link {
+  display: flex;         
+  flex-direction: column; 
+  align-items: flex-start;    
+}
 .logo-img {
     height: 5rem;
+    padding: 0.25rem;
+    padding-top: 0;  
 }
-
+#main-header.scrolled .logo-img {
+    height: 4rem;
+    padding: 0rem;  
+}
 .logo-AG {
-    height: 2.5rem;
+    height: 1rem;
 }
 
 .tagline {
@@ -111,8 +161,10 @@ a {
     gap: 1.5rem;
     font-size: 0.75rem;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 850;
     letter-spacing: 0.1em;
+
+    
 }
 
 .menu {
@@ -128,14 +180,17 @@ a {
 /* LIENS PRINCIPAUX */
 .menu>li {
     position: relative;
-
+    margin-top: auto;
+    padding-bottom: 0.25rem ;
 }
+
 
 .menu a {
     display: block;
     text-decoration: none;
     padding: 0 1vw;
     transition: background 0.3s;
+    
 }
 
 /* Petit effet d'underscore au survol */
@@ -179,6 +234,8 @@ a {
 
 }
 
+
+
 .category-nav a {
     color: var(--slate-500);
     text-decoration: none;
@@ -186,7 +243,7 @@ a {
     font-weight: 600;
     text-transform: uppercase;
     position: relative;
-    padding-bottom: 5px;
+    padding-bottom: 0px;
 }
 
 /* Bouton Burger (caché par défaut) */
@@ -381,7 +438,7 @@ a {
     color: var(--ag-red);
     font-size: 0.65rem;
     font-weight: 700;
-    padding: 0.2rem 0.5rem;
+    /*padding: 0.2rem 0.5rem;*/
     border-radius: 99px;
     text-transform: uppercase;
 }
@@ -427,7 +484,7 @@ a {
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    /*margin-bottom: 0.5rem;*/
 }
 
 .title-md {

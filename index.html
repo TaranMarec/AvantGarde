@@ -9,16 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-slate-100">
 
-  <header class="main-header">
+  <header id="main-header">
     <div class="container header-content">
       <div class="logo-wrapper">
-        <a href="./index.html" style="display: block;">
+        <a href="./index.html" class="logo-link">
           <img
             src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/LAVANTGARDE%20ROUGE.png&fileId=99580&x=1920&y=1200&a=true&etag=76a15382936ce587a4bb50430fb154a3"
             alt="Logo L'Avant-Garde" class="logo-img">
@@ -36,8 +35,8 @@
           <li><a href="./categorie.html">SPORT</a></li>
           <li><a href="./categorie.html">Archive</a></li>
           <li><a href="#">À propos</a></li>
-          <li><a href="./Linktree.html"><img
-                src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/AG%2B%20Noir.png&fileId=99578&x=1920&y=1200&a=true&etag=3ccbfb6020bdab36d75ac08b395ed1fc"
+           <li><a href="./Linktree.html"><img
+                src="./AG+.png"
                 class="logo-AG"></a></li>
         </ul>
 
@@ -47,16 +46,43 @@
           <div class="line3"></div>
         </button>
         <script>
+
+          // JavaScript pour ajouter la classe "scrolled" au défilement
+          window.onscroll = function () {
+            const header = document.getElementById("main-header");
+
+            // Si on a scrollé de plus de 80px
+            if (header) {
+              if (window.pageYOffset > 80) {
+                header.classList.add("scrolled");
+              } else {
+                header.classList.remove("scrolled");
+              }
+            } else {
+              console.error("L'élément #main-header n'a pas été trouvé dans le HTML !");
+            }
+          };
           const burger = document.getElementById('burger');
           const nav = document.querySelector('.menu');
 
           burger.addEventListener('click', () => {
-            // Toggle du menu
-            nav.classList.toggle('nav-active');
-            // Toggle du scroll sur le body
-            document.body.classList.toggle('no-scroll');
-            // Animation du bouton burger
-            burger.classList.toggle('toggle');
+
+            if (window.scrollY === 0) {
+              window.scrollTo(0, 85); // Descend de 85 pixels immédiatement
+              // Toggle du menu
+              nav.classList.toggle('nav-active');
+              // Toggle du scroll sur le body
+              document.body.classList.toggle('no-scroll');
+              // Animation du bouton burger
+              burger.classList.toggle('toggle');
+            } else {
+              // Toggle du menu
+              nav.classList.toggle('nav-active');
+              // Toggle du scroll sur le body
+              document.body.classList.toggle('no-scroll');
+              // Animation du bouton burger
+              burger.classList.toggle('toggle');
+            }
           });
         </script>
       </nav>
@@ -226,7 +252,8 @@
       </aside>
 
       <section class="newsletter-card">
-        <!----><h2>L'Avant-Garde</h2>
+        <!---->
+        <h2>L'Avant-Garde</h2>
         <p class="newsletter-desc">Décryptages politiques et actus militantes : reçois nos infos où tu veux.</p>
 
         <form class="newsletter-form" action="./newsLetter.html" method="get">
