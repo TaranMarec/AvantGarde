@@ -16,51 +16,64 @@
 
   <header id="main-header">
     <div class="container header-content">
-      <div class="logo-wrapper">
-        <a href="./index.html" class="logo-link">
-          <img
-            src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/LAVANTGARDE%20ROUGE.png&fileId=99580&x=1920&y=1200&a=true&etag=76a15382936ce587a4bb50430fb154a3"
-            alt="Logo L'Avant-Garde" class="logo-img">
-          <p class="tagline">Journal des jeunes communistes</p>
-        </a>
+      <div class="header-top">
+        <div class="header-meta-left">
+          <a href="#" class="pc-only">Archives</a>
+          <a href="#" class="pc-only">À propos</a>
+          <button class="burger" id="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </button>
+        </div>
+        <div class="logo-wrapper">
+          <a href="./index.html" class="logo-link">
+            <img
+              src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/LAVANTGARDE%20ROUGE.png&fileId=99580&x=1920&y=1200&a=true&etag=76a15382936ce587a4bb50430fb154a3"
+              alt="Logo L'Avant-Garde" class="logo-img">
+            <p class="tagline">Journal des jeunes communistes</p>
+          </a>
+        </div>
+        <div class="header-meta-right">
+          <a href="#" class="ag-plus-btn">
+            <img src="https://taranmarec.github.io/AvantGarde/AG+.png" alt="AG+">
+          </a>
+        </div>
       </div>
-
       <nav class="main-nav">
         <ul class="menu">
           <li>
             <a href="./categorie.html">FRANCE</a>
           </li>
-          <li><a href="./categorie.html">INTERNATIONAL</a></li>
-          <li><a href="./categorie.html">CULTURE</a></li>
-          <li><a href="./categorie.html">SPORT</a></li>
-          <li><a href="./categorie.html">Archive</a></li>
-          <li><a href="#">À propos</a></li>
-           <li><a href="./Linktree.html"><img
-                src="./AG+.png"
-                class="logo-AG"></a></li>
+          <li><a href="./categorie.html">International</a></li>
+          <li><a href="./categorie.html">Social-Éco</a></li>
+          <li><a href="./categorie.html">Politique et Société </a></li>
+          <li><a href="./categorie.html">Environnement </a></li>
+          <li><a href="./categorie.html">Éducation </a></li>
+          <li><a href="./categorie.html">Culture</a></li>
+          <li class="mobile-only"><a href="./Linktree.html"><img src="./AG+.png" class="logo-AG"></a></li>
+          <li class="mobile-only"><a href="./categorie.html">A propos </a></li>
+          <li class="mobile-only"><a href="./categorie.html">Archive</a></li>
         </ul>
 
-        <button class="burger" id="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </button>
+
         <script>
 
           // JavaScript pour ajouter la classe "scrolled" au défilement
           window.onscroll = function () {
             const header = document.getElementById("main-header");
             const logoImg = document.querySelector(".logo-img");
-          const logoCompact= "./AGROUGE.png";
-         const logoHero= "./BigAg.png";
+            // const logoCompact = "./AGROUGE.png";
+            //const logoHero = "./BigAg.png";
             // Si on a scrollé de plus de 80px
+            
             if (header) {
-              if (window.pageYOffset > 80) {
+              if (window.innerWidth <= 440 || window.pageYOffset > 80) {
                 header.classList.add("scrolled");
-                logoImg.src = logoCompact;
+                // logoImg.src = logoCompact;
               } else {
                 header.classList.remove("scrolled");
-                logoImg.src = logoHero;
+                //  logoImg.src = logoHero;
               }
             } else {
               console.error("L'élément #main-header n'a pas été trouvé dans le HTML !");
@@ -68,13 +81,14 @@
           };
           const burger = document.getElementById('burger');
           const nav = document.querySelector('.menu');
+          window.onresize = window.onscroll;
 
 
 
           burger.addEventListener('click', () => {
 
             if (window.scrollY === 0) {
-              window.scrollTo(0, 85); // Descend de 85 pixels immédiatement
+              //window.scrollTo(0, 85); // Descend de 85 pixels immédiatement
               // Toggle du menu
               nav.classList.toggle('nav-active');
               // Toggle du scroll sur le body
@@ -92,7 +106,7 @@
           });
         </script>
       </nav>
-
+    </div>
   </header>
   <!-- <div class="category-bar">
       <nav class="category-nav">
@@ -257,33 +271,36 @@
 
       </aside>
 
-      <section class="newsletter-card">
-        <!---->
-        <h2>L'Avant-Garde</h2>
-        <p class="newsletter-desc">Décryptages politiques et actus militantes : reçois nos infos où tu veux.</p>
 
-        <form class="newsletter-form" action="./newsLetter.html" method="get">
-          <input type="email" placeholder="Ton adresse email" required>
-          <button type="submit" class="btn-email" href="./newsLetter.html">S'abonner à la newsletter</button>
-        </form>
-
-        <div class="divider">Ou nous suivre sur nos canaux</div>
-
-        <div class="social-grid">
-          <a href="#" class="social-btn whatsapp">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-          </a>
-          <a href="#" class="social-btn telegram">
-            <i class="fab fa-telegram-plane"></i> Telegram
-          </a>
-          <a href="#" class="social-btn instagram">
-            <i class="fab fa-instagram"></i> Suivre sur Instagram
-          </a>
-        </div>
-      </section>
     </div>
 
   </main>
+  <div class="newsletter-box">
+    <section class="newsletter-card">
+      <!---->
+      <h2>L'Avant-Garde</h2>
+      <p class="newsletter-desc">Décryptages politiques et actus militantes : reçois nos infos où tu veux.</p>
+
+      <form class="newsletter-form" action="./newsLetter.html" method="get">
+        <input type="email" placeholder="Ton adresse email" required>
+        <button type="submit" class="btn-email" href="./newsLetter.html">S'abonner à la newsletter</button>
+      </form>
+
+      <div class="divider">Ou nous suivre sur nos canaux</div>
+
+      <div class="social-grid">
+        <a href="#" class="social-btn whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="#" class="social-btn telegram">
+          <i class="fab fa-telegram-plane"></i> Telegram
+        </a>
+        <a href="#" class="social-btn instagram">
+          <i class="fab fa-instagram"></i> Suivre sur Instagram
+        </a>
+      </div>
+    </section>
+  </div>
   <footer class="main-footer">
     <div class="container footer-content">
 
