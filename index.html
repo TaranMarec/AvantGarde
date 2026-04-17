@@ -60,13 +60,13 @@
         <script>
 
           // JavaScript pour ajouter la classe "scrolled" au défilement
-          window.onscroll = function () {
+          function checkHeaderStatus() {
             const header = document.getElementById("main-header");
             const logoImg = document.querySelector(".logo-img");
             // const logoCompact = "./AGROUGE.png";
             //const logoHero = "./BigAg.png";
             // Si on a scrollé de plus de 80px
-            
+
             if (header) {
               if (window.innerWidth <= 440 || window.pageYOffset > 80) {
                 header.classList.add("scrolled");
@@ -81,7 +81,9 @@
           };
           const burger = document.getElementById('burger');
           const nav = document.querySelector('.menu');
-          window.onresize = window.onscroll;
+          window.onscroll = checkHeaderStatus;
+          window.onresize = checkHeaderStatus;
+          checkHeaderStatus();
 
 
 
