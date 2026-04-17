@@ -376,7 +376,7 @@ a {
 }
 /* --- RESPONSIVE MOBILE (Écrans < 768px) --- */
 @media screen and (max-width: 768px) {
-
+    .menu a { padding: 0.4rem 0.85rem;}
     .menu {
         position: absolute;
         right: 0;
@@ -407,7 +407,7 @@ a {
 
     .menu>li {
 
-        margin-top: 6vh;
+        margin-top: 4vh;
     }
 
     .nav-links li {
