@@ -1,0 +1,60 @@
+.main-footer {
+    background-color: white;
+    /* Ou var(--slate-900) pour un footer sombre */
+    border-top: 1px solid var(--slate-200);
+    padding: 3rem 0;
+    margin-top: 4rem;
+    color: var(--slate-500);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+/* Sur tablette et ordinateur, on aligne à gauche et à droite */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+.footer-info p {
+    font-size: 0.85rem;
+    margin: 0.25rem 0;
+}
+
+.footer-tagline {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.7rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    font-size: 0.85rem;
+    color: var(--slate-600);
+}
+
+.footer-links a:hover {
+    color: var(--ag-red);
+    text-decoration: underline;
+}
+
+.newsletter-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

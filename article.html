@@ -24,61 +24,120 @@
 
 <body class="bg-slate-100">
 
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo-wrapper">
-                <a href="./index.html">
-                    <li>
-                        <ul><img href="./index.html"
-                                src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/LAVANTGARDE%20ROUGE.png&fileId=99580&x=1920&y=1200&a=true&etag=76a15382936ce587a4bb50430fb154a3"
-                                alt="Logo L'Avant-Garde" class="logo-img">
-                        </ul>
-                        <ul>
-                            <div>
-                                <p class="tagline">Journal des jeunes communistes</p>
+  <header id="main-header">
+    <div class="container header-content">
+      <div class="header-top">
+        <div class="header-meta-left">
+          <a href="#" class="pc-only">Archives</a>
+          <a href="#" class="pc-only">À propos</a>
+          <button class="burger" id="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </button>
+        </div>
+        <div class="logo-wrapper">
+          <a href="./index.html" class="logo-link">
+            <img
+              src="./img/BigAg.png"
+              alt="Logo L'Avant-Garde" class="logo-img">
+            <p class="tagline">Journal des jeunes communistes</p>
+          </a>
+        </div>
+        <div class="header-meta-right">
+          <a href="./Linktree.html" class="ag-plus-btn">
+            <img src="./img/AG+.png" alt="AG+">
+          </a>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <ul class="menu">
+          <li>
+            <a href="./categorie.html">FRANCE</a>
+          </li>
+          <li><a href="./categorie.html">International</a></li>
+          <li><a href="./categorie.html">Social-Éco</a></li>
+          <li><a href="./categorie.html">Politique et Société </a></li>
+          <li><a href="./categorie.html">Environnement </a></li>
+          <li><a href="./categorie.html">Éducation </a></li>
+          <li><a href="./categorie.html">Culture</a></li>
+          <li class="mobile-only"><!--<a href="./Linktree.html"><img src="./AG+.png" class="logo-AG">-->
 
-                            </div>
-                        </ul>
-                    </li>
-                </a>
-            </div>
+            <a href="./Linktree.html" class="ag-plus-btn">
+              <img src="./img/AG+.png" alt="AG+">
+            </a>
 
-            <nav class="main-nav">
-                <ul class="menu">
-                    <li>
-                        <a href="./categorie.html">FRANCE</a>
-                    </li>
-                    <li><a href="./categorie.html">INTERNATIONAL</a></li>
-                    <li><a href="./categorie.html">CULTURE</a></li>
-                    <li><a href="./categorie.html">SPORT</a></li>
-                    <li><a href="./categorie.html">Archive</a></li>
-                    <li><a href="#">À propos</a></li>
-                    <li><a href="./Linktree.html"><img
-                                src="https://cloud.jeunes-communistes.fr/index.php/apps/files_sharing/publicpreview/y4aDk2cEYkH9XRK?file=/AG%2B%20Noir.png&fileId=99578&x=1920&y=1200&a=true&etag=3ccbfb6020bdab36d75ac08b395ed1fc"
-                                class="logo-AG"></a></li>
-                </ul>
+          </li>
+          <li class="mobile-only"><a href="./categorie.html">A propos </a></li>
+          <li class="mobile-only"><a href="./categorie.html">Archive</a></li>
+        </ul>
 
-                <button class="burger" id="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </button>
-                <script>
-                    const burger = document.getElementById('burger');
-                    const nav = document.querySelector('.menu');
 
-                    burger.addEventListener('click', () => {
-                        // Toggle du menu
-                        nav.classList.toggle('nav-active');
-                        // Toggle du scroll sur le body
-                        document.body.classList.toggle('no-scroll');
-                        // Animation du bouton burger
-                        burger.classList.toggle('toggle');
-                    });
-                </script>
-            </nav>
+        <script>
 
-    </header>
+          // JavaScript pour ajouter la classe "scrolled" au défilement
+          function checkHeaderStatus() {
+            const header = document.getElementById("main-header");
+            const logoImg = document.querySelector(".logo-img");
+            // const logoCompact = "./AGROUGE.png";
+            //const logoHero = "./BigAg.png";
+            // Si on a scrollé de plus de 80px
+
+            if (header) {
+              if (window.innerWidth <= 440 || window.pageYOffset > 80) {
+                header.classList.add("scrolled");
+                // logoImg.src = logoCompact;
+              } else {
+                header.classList.remove("scrolled");
+                //  logoImg.src = logoHero;
+              }
+            } else {
+              console.error("L'élément #main-header n'a pas été trouvé dans le HTML !");
+            }
+          };
+          const burger = document.getElementById('burger');
+          const nav = document.querySelector('.menu');
+          window.onscroll = checkHeaderStatus;
+          window.onresize = checkHeaderStatus;
+          checkHeaderStatus();
+
+
+
+          burger.addEventListener('click', () => {
+
+            if (window.scrollY === 0) {
+              //window.scrollTo(0, 85); // Descend de 85 pixels immédiatement
+              // Toggle du menu
+              nav.classList.toggle('nav-active');
+              // Toggle du scroll sur le body
+              document.body.classList.toggle('no-scroll');
+              // Animation du bouton burger
+              burger.classList.toggle('toggle');
+            } else {
+              // Toggle du menu
+              nav.classList.toggle('nav-active');
+              // Toggle du scroll sur le body
+              document.body.classList.toggle('no-scroll');
+              // Animation du bouton burger
+              burger.classList.toggle('toggle');
+            }
+          });
+        </script>
+      </nav>
+    </div>
+  </header>
+  <!-- <div class="category-bar">
+      <nav class="category-nav">
+        <ul>
+          <li><a href="#">Afrique</a></li>
+          <li><a href="#">Amériques</a></li>
+          <li><a href="#">Asie</a></li>
+          <li><a href="#">Europe</a></li>
+          <li><a href="#">Monde</a></li>
+          <li><a href="#">Palestine</a></li>
+        </ul>
+      </nav>
+    </div>-->
 
     <main class="container">
         <div class="grid-layout">

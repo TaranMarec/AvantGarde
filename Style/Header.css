@@ -1,0 +1,473 @@
+/* VARIABLES & RESET */
+:root {
+    --ag-red: #b91c1c;
+    --ag-red-hover: #991b1b;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-900: #0f172a;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+}
+
+html {
+    /* Empêche le saut de mise en page sur PC */
+    scrollbar-gutter: stable;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: 'Inter', sans-serif;
+    background-color: var(--slate-100);
+    color: var(--slate-900);
+    line-height: 1.5;
+}
+
+li {
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+    vertical-align: middle;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0.5rem;
+
+}
+
+/* HEADER */
+#main-header {
+    background: white;
+    border-bottom: 1px solid var(--slate-200);
+    position: fixed;
+    z-index: 900;
+    width: 100%;
+    transition: all 0.3s;
+
+}
+
+.main-content {
+    margin-top: 150px;
+    /* Ajuste cette valeur selon la hauteur de ton logo */
+}
+
+/* Sur mobile, on réduit l'espace car le logo est plus petit */
+@media screen and (max-width: 768px) {
+    .main-content {
+        margin-top: 140px;
+    }
+}
+
+.header-content {
+
+    display: flex;
+    /*justify-content: space-between;
+    align-items: center;*/
+    flex-direction: column;
+    padding-top: 0;
+
+}
+
+#main-header.scrolled .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: row;*/
+    padding: 0.3rem;
+
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 0.25rem;
+    gap: 1rem;
+}
+
+.header-meta-left {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--slate-500);
+    align-items: center;
+    min-width: 120px;
+}
+
+
+
+.header-meta-left a:hover {
+    color: var(--ag-red);
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 0.8rem;
+    z-index: 1;
+
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+#main-header.scrolled .logo-wrapper {
+    padding: 0;
+    width: fit-content;
+}
+
+.logo-link {
+    display: flex;
+    display: block;
+    text-decoration: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* #main-header.scrolled .logo-link {
+   display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}*/
+
+.logo-img {
+    height: 5rem;
+    padding-bottom: 0.2rem;
+    padding-top: 0;
+    transition: height 0.3s
+}
+
+.header-meta-right {
+    display: flex;
+    align-items: center;
+    min-width: 120px;
+    justify-content: flex-end;
+}
+
+
+
+.ag-plus-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--ag-red);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.4rem 0.85rem;
+    border-radius: 99px;
+    transition: background 0.2s;
+}
+
+.ag-plus-btn:hover {
+    background: var(--ag-red-hover);
+}
+
+.ag-plus-btn img {
+    height: 1.1rem;
+    filter: brightness(0) invert(1);
+}
+
+@media screen and (min-width: 768px) {
+    #main-header.scrolled .header-meta-left {
+        display: none
+    }
+
+    #main-header.scrolled .header-meta-right {
+        display: none
+    }
+}
+
+#main-header.scrolled .logo-img {
+    height: 2.5rem;
+    padding: 0;
+    padding-top: 0;
+}
+
+
+.logo-AG {
+    height: 1.4rem;
+}
+
+/*#main-header.scrolled .logo-AG {
+    height: 1.15rem;
+}*/
+
+.tagline {
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--slate-500);
+    line-height: 0.1
+}
+
+#main-header.scrolled .tagline {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+}
+
+.brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.text-red {
+    color: var(--ag-red);
+}
+
+.main-nav {
+    /* display: flex;
+     Masqué sur mobile par défaut 
+    gap: 1.5rem;
+    font-size: clamp(0.75rem, 0.65vw, 2rem);
+    text-transform: uppercase;
+    font-weight: 850;
+    letter-spacing: 0.1em;*/
+    border-top: 2px solid var(--slate-100);
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s;
+    font-size: clamp(0.75rem, 0.65vw, 2rem);
+    text-transform: uppercase;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin-top: 0.25rem;
+}
+
+.main-nav a.active {
+    color: var(--ag-red);
+    border-bottom: 2px solid var(--ag-red);
+}
+
+/* LIENS PRINCIPAUX */
+.menu>li {
+    position: relative;
+    margin-top: auto;
+    padding-bottom: 0.25rem;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.menu a {
+    display: block;
+    text-decoration: none;
+    padding: 0 0.75vw;
+    transition: background 0.3s;
+
+}
+
+/* Petit effet d'underscore au survol */
+.menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0.2rem;
+    bottom: 0;
+    left: 0;
+    background-color: var(--ag-red-hover);
+    transition: width 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a:hover {
+    color: var(--ag-red-hover);
+}
+
+
+
+
+/* --- SECOND MENU (Catégories) --- */
+.category-bar {
+    background-color: var(--slate-200);
+    border-bottom: 1px solid var(--slate-100);
+    /*padding: 0.1rem 50vw;*/
+    z-index: 1;
+
+}
+
+.category-nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 5vw;
+    /*flex-wrap: wrap;       /* Autorise le passage sur plusieurs lignes */
+
+}
+
+
+
+.category-nav a {
+    color: var(--slate-500);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 0px;
+}
+
+/* Bouton Burger (caché par défaut) */
+.burger {
+    display: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 440px) {
+    .main-content {
+        margin-top: 80px;
+    }
+}
+
+/* --- RESPONSIVE MOBILE (Écrans < 768px) --- */
+@media screen and (max-width: 768px) {
+    .menu a {
+        padding: 0.4rem 0.85rem;
+    }
+
+    .menu {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0vh;
+        background-color: var(--slate-100);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        /* Hors de l'écran par défaut */
+        transition: transform 0.5s ease-in;
+        /*padding-top: 50px;
+        gap: 3rem;*/
+        gap: 0;
+        z-index: 1000;
+    }
+
+    /*.header-meta-left{ display: none;}*/
+    .header-meta-right {
+        display: flex;
+    }
+
+    .tagline {
+        display: none;
+    }
+
+    .menu>li {
+
+        margin-top: 4.1vh;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .mobile-only {
+        display: flex;
+    }
+
+    .pc-only {
+        display: none;
+    }
+
+    .burger {
+        display: none;
+        cursor: pointer;
+        border: none;
+        background: none;
+        position: relative;
+        z-index: 1100;
+        /* Toujours supérieur au menu (1000) */
+    }
+
+    @media screen and (max-width: 768px) {
+        .burger {
+            display: block;
+        }
+    }
+
+    /* Quand le menu est ouvert */
+    .nav-active {
+        transform: translateX(0%);
+        background-color: white;
+        width: 100%;
+    }
+
+    /* Animation d'apparition des liens */
+    .nav-active li {
+        opacity: 1;
+        transition: opacity 0.5s ease 0.2s;
+
+    }
+
+    /* Transformation du burger en "X" */
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+

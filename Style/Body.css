@@ -1,0 +1,706 @@
+/* VARIABLES & RESET */
+:root {
+    --ag-red: #b91c1c;
+    --ag-red-hover: #991b1b;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-900: #0f172a;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+}
+
+html {
+    /* Empêche le saut de mise en page sur PC */
+    scrollbar-gutter: stable;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: 'Inter', sans-serif;
+    background-color: var(--slate-100);
+    color: var(--slate-900);
+    line-height: 1.5;
+}
+
+li {
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+    vertical-align: middle;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0.5rem;
+
+}
+
+/* HEADER */
+#main-header {
+    background: white;
+    border-bottom: 1px solid var(--slate-200);
+    position: fixed;
+    z-index: 900;
+    width: 100%;
+    transition: all 0.3s;
+
+}
+
+.main-content {
+    margin-top: 150px;
+    /* Ajuste cette valeur selon la hauteur de ton logo */
+}
+
+/* Sur mobile, on réduit l'espace car le logo est plus petit */
+@media screen and (max-width: 768px) {
+    .main-content {
+        margin-top: 140px;
+    }
+}
+
+
+
+/* Nom de l'édition*/
+/* Espacement du bloc header */
+.edition-header {
+    margin-bottom: 0.1rem;
+}
+
+/* Le conteneur du badge (Flexbox pour l'alignement horizontal) */
+.edition-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background-color: #fef2f2;
+    /* Rouge très clair */
+    border: 1px solid #fee2e2;
+    border-radius: 9999px;
+    /* Forme pilule */
+}
+
+/* Style du texte "Édition hebdomadaire" */
+.edition-type {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #b91c1c;
+    /* Rouge soutenu */
+}
+
+/* Le petit point séparateur */
+.edition-dot {
+    width: 4px;
+    height: 4px;
+    background-color: #fecaca;
+    border-radius: 50%;
+}
+
+/* Style de la date */
+.edition-date {
+    font-size: 0.7rem;
+    color: #64748b;
+    /* Gris ardoise */
+}
+
+/* LAYOUT GRIDS */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+
+}
+
+@media (min-width: 768px) {
+    .grid-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* CARDS & ARTICLES */
+.card {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: box-shadow 1s;
+        margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 0 24px rgba(254, 0, 0, 0.31);
+    color: var(--ag-red);
+}
+
+.hero-article {
+    display: flex;
+    flex-direction: column;
+    /*margin-bottom: 2.5rem;*/
+}
+
+@media (min-width: 768px) {
+    .hero-article {
+        flex-direction: row;
+    }
+
+    .hero-image {
+        flex: 0 0 41%;
+    }
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.meta {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.category-tag {
+    background: #fef2f2;
+    color: var(--ag-red);
+    font-size: 0.65rem;
+    font-weight: 700;
+    /*padding: 0.2rem 0.5rem;*/
+    border-radius: 99px;
+    text-transform: uppercase;
+}
+
+.title-xl {
+    font-size: 1.75rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.2;
+}
+
+.title-xl a:hover {
+    color: var(--ag-red);
+}
+
+.excerpt {
+    color: var(--slate-600);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    color: var(--ag-red);
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-bottom: 1px solid rgba(185, 28, 28, 0.3);
+}
+
+/* SECONDARY GRID */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
+    gap: 1.5rem;
+}
+
+.thumb img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.category-text {
+    color: var(--ag-red);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    /*margin-bottom: 0.5rem;*/
+}
+
+.title-md {
+    font-size: 1.125rem;
+    margin-bottom: 0.2rem;
+}
+
+/* SIDEBAR */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--slate-300);
+    border-radius: 0.75rem;
+    outline: none;
+}
+
+.sidebar-label {
+    color: var(--ag-red);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sidebar-title {
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    font-weight: 600;
+}
+
+.play-geant {
+    /* On utilise 100% pour qu'il prenne toute la largeur de son conteneur */
+    width: 100%;
+    max-width: 2000px;
+    /* Mais on limite à 2000px maximum */
+    height: auto;
+    /* La hauteur s'ajuste toute seule pour ne pas déformer */
+    color: #FF0000;
+    /* On le met en rouge pour le style ! */
+}
+
+.yt-thumb {
+    position: relative;
+    display: block;
+    margin-top: 0.75rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.yt-thumb img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease, filter 0.4s ease;
+    opacity: 0.9;
+}
+
+.yt-thumb:hover img {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+/*.play-btn {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center        .style-12 { background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0)); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 8px 32px 0 rgba(0,0,0,0.1); }
+
+}
+;
+.play-btn span {
+position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(255,255,255,0.2); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem; color: white; transition: 0.3s;
+
+}
+        .play-btn:hover .play-btn{ background: rgba(206,0,26,0.5); border-color: var(--ag-red); }*/
+
+.yt-block {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-12 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    transition: 0.3s;
+}
+
+.yt-block:hover .btn-12 {
+    background: rgba(206, 0, 26, 0.5);
+    border-color: var(--ag-red);
+}
+
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.tags-cloud a {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--slate-300);
+    border-radius: 99px;
+}
+
+
+
+/* UTILITAIRES */
+.p-4 {
+    padding: 1rem;
+}
+
+.border-b {
+    border-bottom: 1px solid var(--slate-200);
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.w-full {
+    width: 100%;
+}
+
+
+.newsletter-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.newsletter-card {
+    background: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /* Correction du var(--white) si non défini */
+    width: 60vw;
+    /* Prend toute la largeur du parent (content-area) */
+    max-width: none;
+    /* Supprime la limite de 39rem */
+    /* margin-top: 2.5rem;  Ajoute de l'espace avec la grille d'articles */
+    padding: 2.5rem;
+    border-radius: 1rem;
+    /* Aligné sur l'arrondi de vos autres cartes */
+    text-align: center;
+    border: 1px solid var(--slate-200);
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .newsletter-card {
+        width: 99vw;
+    }
+}
+
+.newsletter-tag {
+    color: var(--ag-red);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    color: var(--slate-900);
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-desc {
+    color: var(--slate-700);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+/* --- FORMULAIRE EMAIL --- */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.newsletter-form input {
+    padding: 0.9rem 1.2rem;
+    border: 1px solid var(--slate-300);
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--ag-red);
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+}
+
+.btn-email {
+    background: var(--ag-red);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.btn-email:hover {
+    background: var(--ag-red-hover);
+}
+
+/* --- SÉPARATEUR --- */
+.divider {
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--slate-400);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--slate-200);
+}
+
+.divider:not(:empty)::before {
+    margin-right: 1em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: 1em;
+}
+
+/* --- BOUTONS CANAUX --- */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.social-btn i {
+    font-size: 1.2rem;
+}
+
+.social-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Couleurs */
+.whatsapp {
+    background-color: #25D366;
+}
+
+.telegram {
+    background-color: #0088cc;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    grid-column: span 2;
+    /* L'instagram prend toute la largeur pour le design */
+}
+
+@media (max-width: 400px) {
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .instagram {
+        grid-column: span 1;
+    }
+}
+
+
+
+/*----- Article ------*/
+
+.sur-titre {
+    text-transform: uppercase;
+    font-family: 'Libre+Franklin', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #9d0000;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+h1 {
+    font-size: 3.2rem;
+    line-height: 1;
+    margin: 0 0 20px 0;
+    font-weight: 900;
+}
+
+.chapeau {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+/* Gestion de l'image (Style Diplo) */
+.article-figure {
+    margin: 30px 0;
+    padding: 0;
+}
+
+.article-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(10%) contrast(1.1);
+    /* Pour le côté papier journal */
+}
+
+.article-figure figcaption {
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.3;
+    border-left: 3px solid #9d0000;
+    padding-left: 10px;
+}
+
+.credit {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+/* Corps de l'article */
+.meta {
+    font-size: 0.95rem;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+
+.auteur {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.article-content {
+    font-size: 1.3rem;
+    text-align: justify;
+    hyphens: auto;
+}
+
+.article-content p:first-of-type::first-letter {
+    float: left;
+    font-size: 5.5rem;
+    line-height: 0.8;
+    padding-top: 6px;
+    padding-right: 10px;
+
+    font-weight: 700;
+}
+
+.article h2 {
+
+    font-size: 1.9rem;
+    margin-top: 45px;
+    border-top: 1px solid #000;
+    padding-top: 15px;
+}
+
+.encadre {
+    background-color: #f1f1ee;
+    padding: 25px;
+    border: 1px solid #dcdcdc;
+    font-size: 1.1rem;
+    margin: 40px 0;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .article-content {
+        font-size: 1.15rem;
+    }
+}
+
+
+
+    /* Bloc JC Amélioré */
+    .jc-card { background: white; border: 1px solid var(--slate-200); border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+    .jc-header { padding: 1.1rem 1.25rem; background: linear-gradient(to right, #fff5f5, white); border-bottom: 1px solid var(--slate-100); display: flex; align-items: center; gap: 0.8rem; }
+    .jc-logo { height: 26px; width: auto; object-fit: contain; }
+    .jc-label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ag-red); flex: 1; }
+    .jc-voir-plus { font-size: 0.65rem; font-weight: 700; color: var(--slate-400); text-transform: uppercase; }
+    .jc-voir-plus:hover { color: var(--ag-red); }
+    .jc-item { display: flex; gap: 1rem; padding: 1.1rem 1.25rem; border-bottom: 1px solid var(--slate-50); transition: all 0.25s ease; text-decoration: none; align-items: center; }
+    .jc-item:last-child { border-bottom: none; }
+    .jc-item:hover { background-color: #fffafb; transform: translateX(5px); }
+    .jc-indicator { width: 3px; height: 32px; background: var(--slate-200); border-radius: 2px; transition: background 0.3s; flex-shrink: 0; }
+    .jc-item:hover .jc-indicator { background: var(--ag-red); }
+    .jc-content { display: flex; flex-direction: column; gap: 0.2rem; }
+    .jc-item-title { font-size: 0.88rem; font-weight: 600; line-height: 1.4; color: var(--slate-900); transition: color 0.2s; }
+    .jc-item:hover .jc-item-title { color: var(--ag-red); }
+    .jc-item-date { font-size: 0.68rem; color: var(--slate-400); display: flex; align-items: center; gap: 0.35rem; }
