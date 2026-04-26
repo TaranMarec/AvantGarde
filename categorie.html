@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
 
-  <link rel="stylesheet" href="./Style.css">
 </head>
 
 <body class="bg-slate-100">
@@ -19,8 +19,17 @@
     <div class="container header-content">
       <div class="header-top">
         <div class="header-meta-left">
-          <a href="#" class="pc-only">Archives</a>
-          <a href="#" class="pc-only">À propos</a>
+          <ul>
+            <li>
+              <a href="#" class="pc-only">Archives</a>
+            </li>
+            <li>
+              <a href="#" class="pc-only">À propos</a>
+            </li>
+            <li>
+              <a href="#follow" class="pc-only">Abonez vous</a>
+            </li>
+          </ul>
           <button class="burger" id="burger">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -29,9 +38,7 @@
         </div>
         <div class="logo-wrapper">
           <a href="./index.html" class="logo-link">
-            <img
-              src="./img/BigAg.png"
-              alt="Logo L'Avant-Garde" class="logo-img">
+            <img src="./img/BigAg.png" alt="Logo L'Avant-Garde" class="logo-img">
             <p class="tagline">Journal des jeunes communistes</p>
           </a>
         </div>
@@ -43,9 +50,6 @@
       </div>
       <nav class="main-nav">
         <ul class="menu">
-          <li>
-            <a href="./categorie.html">FRANCE</a>
-          </li>
           <li><a href="./categorie.html">International</a></li>
           <li><a href="./categorie.html">Social-Éco</a></li>
           <li><a href="./categorie.html">Politique et Société </a></li>
@@ -115,20 +119,17 @@
           });
         </script>
       </nav>
-
     </div>
-    
   </header>
-
 
   <main class="container main-content">
-  <header class="edition-header">
-    <div class="edition-badge">
-      <span class="edition-type">INTERNATIONAL</span>
-
-
-    </div>
-  </header>
+    <header class="edition-header">
+      <div class="edition-badge">
+        <span class="edition-type">Édition hebdomadaire</span>
+        <span class="edition-dot"></span>
+        <span class="edition-date">4 décembre 2025</span>
+      </div>
+    </header>
     <div class="grid-layout">
 
       <section class="content-area">
@@ -139,13 +140,10 @@
             <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/04/Plan-de-travail-2.png" alt="Venezuela">
           </a>
           <div class="card-body">
-            <div class="meta">
-              <span class="category-tag">Édito</span>
-              <span class="author">Par Assan Lakehoul</span>
-            </div>
             <h1 class="title-xl">
               <a href="./article.html">Le Venezuela dans la ligne de mire de l’empire</a>
             </h1>
+            <span class="author">Par Assan Lakehoul</span>
             <p class="excerpt">
               Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
               menace d’intervention militaire, mise à prix de la tête du président...
@@ -153,57 +151,98 @@
             <a href="./article.html" class="read-more">Lire l’édito</a>
           </div>
         </article>
-
-        <div class="articles-grid">
-          <article class="card">
-            <a href="./article.html" class="thumb"><img
-                src="https://wp.lavantgarde.fr/wp-content/uploads/2025/12/Sans-titre-8.png" alt="COP30"></a>
-            <div class="p-4">
-              <p class="category-text">Climat</p>
-              <h2 class="title-md"><a href="./article.html">À la COP30, les États insulaires, acteurs de leur propre
-                  survie</a></h2>
-              <p class="author-sm">Par Tehei</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="./article.html" class="thumb"><img
-                src="https://wp.lavantgarde.fr/wp-content/uploads/2025/12/Train.png" alt="SNCF"></a>
-            <div class="p-4">
-              <p class="category-text">Transport</p>
-              <h2 class="title-md"><a href="./article.html">SNCF : quand le Grand Est déraille</a></h2>
-              <p class="author-sm">Par Alexian</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F04%2FUniversite_de_Franche-Comte.jpg&w=3840&q=75"
-                alt="Université">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Enseignement</p>
-              <h2 class="title-md"><a href="./article.html">5 700 places en moins à l’université pour la rentrée
-                  2026</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F03%2FIA.png&w=3840&q=75"
-                alt="Lutte sociale">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Social</p>
-              <h2 class="title-md"><a href="./article.html">À Arc France, un sauvetage au prix fort pour les
-                  salariés</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-        </div>
+        <article class="card hero-article">
+          <a href="./article.html" class="hero-image">
+            <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/04/Plan-de-travail-2.png" alt="Venezuela">
+          </a>
+          <div class="card-body">
+            <h1 class="title-xl">
+              <a href="./article.html">Le Venezuela dans la ligne de mire de l’empire</a>
+            </h1>
+            <span class="author">Par Assan Lakehoul</span>
+            <p class="excerpt">
+              Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
+              menace d’intervention militaire, mise à prix de la tête du président...
+            </p>
+            <a href="./article.html" class="read-more">Lire l’édito</a>
+          </div>
+        </article>        <article class="card hero-article">
+          <a href="./article.html" class="hero-image">
+            <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/04/Plan-de-travail-2.png" alt="Venezuela">
+          </a>
+          <div class="card-body">
+            <h1 class="title-xl">
+              <a href="./article.html">Le Venezuela dans la ligne de mire de l’empire</a>
+            </h1>
+            <span class="author">Par Assan Lakehoul</span>
+            <p class="excerpt">
+              Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
+              menace d’intervention militaire, mise à prix de la tête du président...
+            </p>
+            <a href="./article.html" class="read-more">Lire l’édito</a>
+          </div>
+        </article>        <article class="card hero-article">
+          <a href="./article.html" class="hero-image">
+            <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/04/Plan-de-travail-2.png" alt="Venezuela">
+          </a>
+          <div class="card-body">
+            <h1 class="title-xl">
+              <a href="./article.html">Le Venezuela dans la ligne de mire de l’empire</a>
+            </h1>
+            <span class="author">Par Assan Lakehoul</span>
+            <p class="excerpt">
+              Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
+              menace d’intervention militaire, mise à prix de la tête du président...
+            </p>
+            <a href="./article.html" class="read-more">Lire l’édito</a>
+          </div>
+        </article>        <article class="card hero-article">
+          <a href="./article.html" class="hero-image">
+            <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/04/Plan-de-travail-2.png" alt="Venezuela">
+          </a>
+          <div class="card-body">
+            <h1 class="title-xl">
+              <a href="./article.html">Le Venezuela dans la ligne de mire de l’empire</a>
+            </h1>
+            <span class="author">Par Assan Lakehoul</span>
+            <p class="excerpt">
+              Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
+              menace d’intervention militaire, mise à prix de la tête du président...
+            </p>
+            <a href="./article.html" class="read-more">Lire l’édito</a>
+          </div>
+        </article>        <article class="card hero-article">
+          <a href="./article.html" class="hero-image">
+            <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/04/Plan-de-travail-2.png" alt="Venezuela">
+          </a>
+          <div class="card-body">
+            <h1 class="title-xl">
+              <a href="./article.html">Le Venezuela dans la ligne de mire de l’empire</a>
+            </h1>
+            <span class="author">Par Assan Lakehoul</span>
+            <p class="excerpt">
+              Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
+              menace d’intervention militaire, mise à prix de la tête du président...
+            </p>
+            <a href="./article.html" class="read-more">Lire l’édito</a>
+          </div>
+        </article>        <article class="card hero-article">
+          <a href="./article.html" class="hero-image">
+            <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/04/Plan-de-travail-2.png" alt="Venezuela">
+          </a>
+          <div class="card-body">
+            <h1 class="title-xl">
+              <a href="./article.html">Le Venezuela dans la ligne de mire de l’empire</a>
+            </h1>
+            <span class="author">Par Assan Lakehoul</span>
+            <p class="excerpt">
+              Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
+              menace d’intervention militaire, mise à prix de la tête du président...
+            </p>
+            <a href="./article.html" class="read-more">Lire l’édito</a>
+          </div>
+        </article>
+        
       </section>
 
       <aside class="sidebar">
@@ -213,15 +252,21 @@
           </div>
         </div>
 
-        <article id="yt-block" class="card p-4">
-          <p class="sidebar-label">Sur notre chaîne YouTube</p>
-          <h2 id="yt-title" class="sidebar-title">Chargement...</h2>
-          <a href="#" id="yt-link" class="yt-thumb" target="_blank">
-            <img id="yt-thumb-img" src="" alt="Miniature" style="display:none; width:100%; border-radius:8px;">
-            <div class="play-btn"><span>▶</span></div>
+        <article id="yt-block" class="card">
+
+          <div class="jc-header">
+            <span class="jc-label"> À DÉCOUVRIR DANS L'AVANT-GARDE PLUS</span>
+            <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-voir-plus">Tout voir →</a>
+          </div>
+          <!--<p class="sidebar-label"> À DÉCOUVRIR DANS L'AVANT-GARDE PLUS</p>
+          <h2 id="yt-title" class="sidebar-title">Chargement...</h2>-->
+
+          <a href="#" class="yt-thumb"><img src="https://img.youtube.com/vi/Cd6dvZAmHgQ/maxresdefault.jpg" alt="">
+            <div class="btn-12"><svg viewBox="0 0 24 24" width="2000" height="48" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg></div>
           </a>
         </article>
-
 
         <script>
           (async function () {
@@ -255,8 +300,6 @@
               img.src = finalVideo.snippet.thumbnails.high.url;
               img.style.display = 'block';
 
-              console.log("Vidéo affichée :", finalVideo.snippet.title);
-
             } catch (error) {
               console.error("Erreur de chargement :", error);
               document.getElementById('yt-title').innerText = "Erreur de connexion";
@@ -264,42 +307,82 @@
           }
           )();
         </script>
-        <article class="card overflow-hidden">
-          <div class="p-4 border-b">
+
+        <aside class="sidebar">
+          <div class="card">
+            <div class="jc-header">
+              <span class="jc-label">Les dernières déclarations du MJCF</span>
+              <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-voir-plus">Tout voir →</a>
+            </div>
+
+            <div class="jc-list">
+              <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-item">
+                <div class="jc-indicator"></div>
+                <div class="jc-content">
+                  <p class="jc-item-title">Non aux coupes dans l'enseignement supérieur : la JC appelle à la lutte</p>
+                  <span class="jc-item-date"><i class="far fa-clock"></i> 10 avril 2026</span>
+                </div>
+              </a>
+
+              <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-item">
+                <div class="jc-indicator"></div>
+                <div class="jc-content">
+                  <p class="jc-item-title">Déclaration du Bureau National sur la situation au Venezuela</p>
+                  <span class="jc-item-date"><i class="far fa-clock"></i> 3 avril 2026</span>
+                </div>
+              </a>
+
+              <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-item">
+                <div class="jc-indicator"></div>
+                <div class="jc-content">
+                  <p class="jc-item-title">Fête de l'Humanité 2026 : la MJCF sera présente en force</p>
+                  <span class="jc-item-date"><i class="far fa-clock"></i> 28 mars 2026</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </aside>
+        <article class="card overflow-hidden " id="trimestrielle">
+          <div class="jc-header">
+            <span class="jc-label">Édition trimestrielle</span>
+            <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-voir-plus">Tout voir →</a>
+          </div>
+          <!--<div class="p-4 border-b">
             <p class="sidebar-label">Édition trimestrielle</p>
             <h2 class="sidebar-title">Cuba, récit d’une révolution en lutte</h2>
-          </div>
+          </div> -->
           <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/10/AG66-COUV.png" class="w-full" alt="Couverture">
         </article>
 
-      </aside>
-
-      <section class="newsletter-card">
-        <h2>L'Avant-Garde</h2>
-        <p class="newsletter-desc">Décryptages politiques et actus militantes : reçois nos infos où tu veux.</p>
-
-        <form class="newsletter-form" action="./newsLetter.html" method="get">
-          <input type="email" placeholder="Ton adresse email" required>
-          <button type="submit" class="btn-email" href="./newsLetter.html">S'abonner à la newsletter</button>
-        </form>
-
-        <div class="divider">Ou nous suivre sur nos canaux</div>
-
-        <div class="social-grid">
-          <a href="#" class="social-btn whatsapp">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-          </a>
-          <a href="#" class="social-btn telegram">
-            <i class="fab fa-telegram-plane"></i> Telegram
-          </a>
-          <a href="#" class="social-btn instagram">
-            <i class="fab fa-instagram"></i> Suivre sur Instagram
-          </a>
-        </div>
-      </section>
     </div>
 
   </main>
+  <div class="newsletter-box" id="follow">
+    <section class="newsletter-card">
+      <!---->
+      <h2>L'Avant-Garde</h2>
+      <p class="newsletter-desc">Décryptages politiques et actus militantes : reçois nos infos où tu veux.</p>
+
+      <form class="newsletter-form" action="./newsLetter.html" method="get">
+        <input type="email" placeholder="Ton adresse email" required>
+        <button type="submit" class="btn-email" href="./newsLetter.html">S'abonner à la newsletter</button>
+      </form>
+
+      <div class="divider">Ou nous suivre sur nos canaux</div>
+
+      <div class="social-grid">
+        <a href="#" class="social-btn whatsapp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="#" class="social-btn telegram">
+          <i class="fab fa-telegram-plane"></i> Telegram
+        </a>
+        <a href="#" class="social-btn instagram">
+          <i class="fab fa-instagram"></i> Suivre sur Instagram
+        </a>
+      </div>
+    </section>
+  </div>
   <footer class="main-footer">
     <div class="container footer-content">
 

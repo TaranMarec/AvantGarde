@@ -1,0 +1,1 @@
+import { checkHeaderStatus } from './script/menu.js';

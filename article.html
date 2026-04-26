@@ -24,109 +24,104 @@
 
 <body class="bg-slate-100">
 
-  <header id="main-header">
-    <div class="container header-content">
-      <div class="header-top">
-        <div class="header-meta-left">
-          <a href="#" class="pc-only">Archives</a>
-          <a href="#" class="pc-only">À propos</a>
-          <button class="burger" id="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </button>
+    <header id="main-header">
+        <div class="container header-content">
+            <div class="header-top">
+                <div class="header-meta-left">
+                    <a href="#" class="pc-only">Archives</a>
+                    <a href="#" class="pc-only">À propos</a>
+                    <button class="burger" id="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </button>
+                </div>
+                <div class="logo-wrapper">
+                    <a href="./index.html" class="logo-link">
+                        <img src="./img/BigAg.png" alt="Logo L'Avant-Garde" class="logo-img">
+                        <p class="tagline">Journal des jeunes communistes</p>
+                    </a>
+                </div>
+                <div class="header-meta-right">
+                    <a href="./Linktree.html" class="ag-plus-btn">
+                        <img src="./img/AG+.png" alt="AG+">
+                    </a>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="menu">
+                    <li><a href="./categorie.html">International</a></li>
+                    <li><a href="./categorie.html">Social-Éco</a></li>
+                    <li><a href="./categorie.html">Politique et Société </a></li>
+                    <li><a href="./categorie.html">Environnement </a></li>
+                    <li><a href="./categorie.html">Éducation </a></li>
+                    <li><a href="./categorie.html">Culture</a></li>
+                    <li class="mobile-only"><!--<a href="./Linktree.html"><img src="./AG+.png" class="logo-AG">-->
+
+                        <a href="./Linktree.html" class="ag-plus-btn">
+                            <img src="./img/AG+.png" alt="AG+">
+                        </a>
+
+                    </li>
+                    <li class="mobile-only"><a href="./categorie.html">A propos </a></li>
+                    <li class="mobile-only"><a href="./categorie.html">Archive</a></li>
+                </ul>
+
+
+                <script>
+
+                    // JavaScript pour ajouter la classe "scrolled" au défilement
+                    function checkHeaderStatus() {
+                        const header = document.getElementById("main-header");
+                        const logoImg = document.querySelector(".logo-img");
+                        // const logoCompact = "./AGROUGE.png";
+                        //const logoHero = "./BigAg.png";
+                        // Si on a scrollé de plus de 80px
+
+                        if (header) {
+                            if (window.innerWidth <= 440 || window.pageYOffset > 80) {
+                                header.classList.add("scrolled");
+                                // logoImg.src = logoCompact;
+                            } else {
+                                header.classList.remove("scrolled");
+                                //  logoImg.src = logoHero;
+                            }
+                        } else {
+                            console.error("L'élément #main-header n'a pas été trouvé dans le HTML !");
+                        }
+                    };
+                    const burger = document.getElementById('burger');
+                    const nav = document.querySelector('.menu');
+                    window.onscroll = checkHeaderStatus;
+                    window.onresize = checkHeaderStatus;
+                    checkHeaderStatus();
+
+
+
+                    burger.addEventListener('click', () => {
+
+                        if (window.scrollY === 0) {
+                            //window.scrollTo(0, 85); // Descend de 85 pixels immédiatement
+                            // Toggle du menu
+                            nav.classList.toggle('nav-active');
+                            // Toggle du scroll sur le body
+                            document.body.classList.toggle('no-scroll');
+                            // Animation du bouton burger
+                            burger.classList.toggle('toggle');
+                        } else {
+                            // Toggle du menu
+                            nav.classList.toggle('nav-active');
+                            // Toggle du scroll sur le body
+                            document.body.classList.toggle('no-scroll');
+                            // Animation du bouton burger
+                            burger.classList.toggle('toggle');
+                        }
+                    });
+                </script>
+            </nav>
         </div>
-        <div class="logo-wrapper">
-          <a href="./index.html" class="logo-link">
-            <img
-              src="./img/BigAg.png"
-              alt="Logo L'Avant-Garde" class="logo-img">
-            <p class="tagline">Journal des jeunes communistes</p>
-          </a>
-        </div>
-        <div class="header-meta-right">
-          <a href="./Linktree.html" class="ag-plus-btn">
-            <img src="./img/AG+.png" alt="AG+">
-          </a>
-        </div>
-      </div>
-      <nav class="main-nav">
-        <ul class="menu">
-          <li>
-            <a href="./categorie.html">FRANCE</a>
-          </li>
-          <li><a href="./categorie.html">International</a></li>
-          <li><a href="./categorie.html">Social-Éco</a></li>
-          <li><a href="./categorie.html">Politique et Société </a></li>
-          <li><a href="./categorie.html">Environnement </a></li>
-          <li><a href="./categorie.html">Éducation </a></li>
-          <li><a href="./categorie.html">Culture</a></li>
-          <li class="mobile-only"><!--<a href="./Linktree.html"><img src="./AG+.png" class="logo-AG">-->
-
-            <a href="./Linktree.html" class="ag-plus-btn">
-              <img src="./img/AG+.png" alt="AG+">
-            </a>
-
-          </li>
-          <li class="mobile-only"><a href="./categorie.html">A propos </a></li>
-          <li class="mobile-only"><a href="./categorie.html">Archive</a></li>
-        </ul>
-
-
-        <script>
-
-          // JavaScript pour ajouter la classe "scrolled" au défilement
-          function checkHeaderStatus() {
-            const header = document.getElementById("main-header");
-            const logoImg = document.querySelector(".logo-img");
-            // const logoCompact = "./AGROUGE.png";
-            //const logoHero = "./BigAg.png";
-            // Si on a scrollé de plus de 80px
-
-            if (header) {
-              if (window.innerWidth <= 440 || window.pageYOffset > 80) {
-                header.classList.add("scrolled");
-                // logoImg.src = logoCompact;
-              } else {
-                header.classList.remove("scrolled");
-                //  logoImg.src = logoHero;
-              }
-            } else {
-              console.error("L'élément #main-header n'a pas été trouvé dans le HTML !");
-            }
-          };
-          const burger = document.getElementById('burger');
-          const nav = document.querySelector('.menu');
-          window.onscroll = checkHeaderStatus;
-          window.onresize = checkHeaderStatus;
-          checkHeaderStatus();
-
-
-
-          burger.addEventListener('click', () => {
-
-            if (window.scrollY === 0) {
-              //window.scrollTo(0, 85); // Descend de 85 pixels immédiatement
-              // Toggle du menu
-              nav.classList.toggle('nav-active');
-              // Toggle du scroll sur le body
-              document.body.classList.toggle('no-scroll');
-              // Animation du bouton burger
-              burger.classList.toggle('toggle');
-            } else {
-              // Toggle du menu
-              nav.classList.toggle('nav-active');
-              // Toggle du scroll sur le body
-              document.body.classList.toggle('no-scroll');
-              // Animation du bouton burger
-              burger.classList.toggle('toggle');
-            }
-          });
-        </script>
-      </nav>
-    </div>
-  </header>
-  <!-- <div class="category-bar">
+    </header>
+    <!-- <div class="category-bar">
       <nav class="category-nav">
         <ul>
           <li><a href="#">Afrique</a></li>
@@ -139,7 +134,8 @@
       </nav>
     </div>-->
 
-    <main class="container">
+
+    <main class="container main-content">
         <div class="grid-layout">
             <section class="content-area">
 
@@ -212,6 +208,39 @@
                             <p class="encadre-source">Source : organismes onusiens.</p>
                         </section>
                     </div>
+                    <div class="actions">
+
+                        <a onclick="openContact()"  class="article_btn">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            Nous contacter
+                        </a>
+                        <a onclick="handleNativeShare()" class="article_btn">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path
+                                    d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z" />
+                            </svg>
+                            Partager
+                        </a>
+
+                    </div>
+
+                    <div id="overlay" onclick="closeContact()"></div>
+
+    <div id="contact-modal" class="modal">
+        <button class="close-modal" onclick="closeContact()">&times;</button>
+        <h3>Nous contacter</h3>
+        <form onsubmit="sendForm(event)">
+            <input type="email" placeholder="Votre email" required>
+            <textarea rows="4" placeholder="Votre message..." required></textarea>
+            
+            <div class="form-footer">
+                <button type="submit" class="submit-btn">Envoyer</button>
+            </div>
+        </form>
+    </div>
                 </article>
                 <div class="articles-grid">
                     <article class="card">
@@ -260,7 +289,45 @@
                         <div class="play-btn"><span>▶</span></div>
                     </a>
                 </article>
+    <script>
+        // --- FONCTION PARTAGE NATIF ---
+        async function handleNativeShare() {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Titre de l\'article',
+                        text: 'Regardez cet article intéressant !',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('Partage annulé ou erreur');
+                }
+            } else {
+                alert("Le partage natif n'est pas supporté. Copiez ce lien : " + window.location.href);
+            }
+        }
 
+        // --- GESTION MODALE CONTACT ---
+        function openContact() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('contact-modal').style.display = 'block';
+            // Empêche le scroll en arrière-plan
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContact() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('contact-modal').style.display = 'none';
+            // Réactive le scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        function sendForm(e) {
+            e.preventDefault();
+            alert("Message envoyé avec succès !");
+            closeContact();
+        }
+    </script>
 
                 <script>
                     (async function () {

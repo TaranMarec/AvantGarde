@@ -128,7 +128,7 @@ a {
 .header-meta-left a:hover {
     color: var(--ag-red);
 }
-
+.header-meta-left li{margin-top: 0.4rem;}
 .logo-wrapper {
     display: flex;
     align-items: center;

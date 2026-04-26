@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 
+  <script src="./script/menu.js" defer></script>
 </head>
 
 <body class="bg-slate-100">
@@ -19,8 +20,17 @@
     <div class="container header-content">
       <div class="header-top">
         <div class="header-meta-left">
-          <a href="#" class="pc-only">Archives</a>
-          <a href="#" class="pc-only">À propos</a>
+          <ul>
+            <li>
+              <a href="#" class="pc-only">Archives</a>
+            </li>
+            <li>
+              <a href="#" class="pc-only">À propos</a>
+            </li>
+            <li>
+              <a href="#follow" class="pc-only">Abonez vous</a>
+            </li>
+          </ul>
           <button class="burger" id="burger">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -29,9 +39,7 @@
         </div>
         <div class="logo-wrapper">
           <a href="./index.html" class="logo-link">
-            <img
-              src="./img/BigAg.png"
-              alt="Logo L'Avant-Garde" class="logo-img">
+            <img src="./img/BigAg.png" alt="Logo L'Avant-Garde" class="logo-img">
             <p class="tagline">Journal des jeunes communistes</p>
           </a>
         </div>
@@ -43,9 +51,6 @@
       </div>
       <nav class="main-nav">
         <ul class="menu">
-          <li>
-            <a href="./categorie.html">FRANCE</a>
-          </li>
           <li><a href="./categorie.html">International</a></li>
           <li><a href="./categorie.html">Social-Éco</a></li>
           <li><a href="./categorie.html">Politique et Société </a></li>
@@ -67,30 +72,12 @@
         <script>
 
           // JavaScript pour ajouter la classe "scrolled" au défilement
-          function checkHeaderStatus() {
-            const header = document.getElementById("main-header");
-            const logoImg = document.querySelector(".logo-img");
-            // const logoCompact = "./AGROUGE.png";
-            //const logoHero = "./BigAg.png";
-            // Si on a scrollé de plus de 80px
 
-            if (header) {
-              if (window.innerWidth <= 440 || window.pageYOffset > 80) {
-                header.classList.add("scrolled");
-                // logoImg.src = logoCompact;
-              } else {
-                header.classList.remove("scrolled");
-                //  logoImg.src = logoHero;
-              }
-            } else {
-              console.error("L'élément #main-header n'a pas été trouvé dans le HTML !");
-            }
-          };
           const burger = document.getElementById('burger');
           const nav = document.querySelector('.menu');
-          window.onscroll = checkHeaderStatus;
-          window.onresize = checkHeaderStatus;
-          checkHeaderStatus();
+         // window.onscroll = checkHeaderStatus;
+          //window.onresize = checkHeaderStatus;
+          //checkHeaderStatus();
 
 
 
@@ -174,26 +161,26 @@
             </div>
           </article>
         </div>
-        
-          <article class="card hero-article">
-            <a href="./article.html" class="hero-image">
-              <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/12/Train.png" alt="SNCF">
-            </a>
-            <div class="card-body">
-              <div class="meta">
-                <!--<span class="category-tag">Édito</span>-->
-                <span class="author">Par Assan Lakehoul</span>
-              </div>
-              <h1 class="title-xl">
-                <a href="./article.html">LSNCF : quand le Grand Est déraille</a>
-              </h1>
-              <p class="excerpt">
-                Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
-                menace d’intervention militaire, mise à prix de la tête du président...
-              </p>
-              <a href="./article.html" class="read-more">Lire l’édito</a>
+
+        <article class="card hero-article">
+          <a href="./article.html" class="hero-image">
+            <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/12/Train.png" alt="SNCF">
+          </a>
+          <div class="card-body">
+            <div class="meta">
+              <!--<span class="category-tag">Édito</span>-->
+              <span class="author">Par Assan Lakehoul</span>
             </div>
-          </article>
+            <h1 class="title-xl">
+              <a href="./article.html">LSNCF : quand le Grand Est déraille</a>
+            </h1>
+            <p class="excerpt">
+              Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
+              menace d’intervention militaire, mise à prix de la tête du président...
+            </p>
+            <a href="./article.html" class="read-more">Lire l’édito</a>
+          </div>
+        </article>
         <div class="articles-grid">
           <article class="card">
             <a href="./article.html" class="thumb">
@@ -232,9 +219,14 @@
           </div>
         </div>
 
-        <article id="yt-block" class="card p-4 yt-block">
-          <p class="sidebar-label"> À DÉCOUVRIR DANS L'AVANT-GARDE PLUS</p>
-          <h2 id="yt-title" class="sidebar-title">Chargement...</h2>
+        <article id="yt-block" class="card">
+
+          <div class="jc-header">
+            <span class="jc-label"> À DÉCOUVRIR DANS L'AVANT-GARDE PLUS</span>
+            <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-voir-plus">Tout voir →</a>
+          </div>
+          <!--<p class="sidebar-label"> À DÉCOUVRIR DANS L'AVANT-GARDE PLUS</p>
+          <h2 id="yt-title" class="sidebar-title">Chargement...</h2>-->
 
           <a href="#" class="yt-thumb"><img src="https://img.youtube.com/vi/Cd6dvZAmHgQ/maxresdefault.jpg" alt="">
             <div class="btn-12"><svg viewBox="0 0 24 24" width="2000" height="48" fill="currentColor">
@@ -283,41 +275,45 @@
           )();
         </script>
 
-    <aside class="sidebar">
-      <div class="card">
-        <div class="jc-header">
-          <span class="jc-label">Déclarations de la JC</span>
-          <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-voir-plus">Tout voir →</a>
-        </div>
-
-        <div class="jc-list">
-          <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-item">
-            <div class="jc-indicator"></div>
-            <div class="jc-content">
-              <p class="jc-item-title">Non aux coupes dans l'enseignement supérieur : la JC appelle à la lutte</p>
-              <span class="jc-item-date"><i class="far fa-clock"></i> 10 avril 2026</span>
+        <aside class="sidebar">
+          <div class="card">
+            <div class="jc-header">
+              <span class="jc-label">Les dernières déclarations du MJCF</span>
+              <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-voir-plus">Tout voir →</a>
             </div>
-          </a>
 
-          <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-item">
-            <div class="jc-indicator"></div>
-            <div class="jc-content">
-              <p class="jc-item-title">Déclaration du Bureau National sur la situation au Venezuela</p>
-              <span class="jc-item-date"><i class="far fa-clock"></i> 3 avril 2026</span>
-            </div>
-          </a>
+            <div class="jc-list">
+              <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-item">
+                <div class="jc-indicator"></div>
+                <div class="jc-content">
+                  <p class="jc-item-title">Non aux coupes dans l'enseignement supérieur : la JC appelle à la lutte</p>
+                  <span class="jc-item-date"><i class="far fa-clock"></i> 10 avril 2026</span>
+                </div>
+              </a>
 
-          <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-item">
-            <div class="jc-indicator"></div>
-            <div class="jc-content">
-              <p class="jc-item-title">Fête de l'Humanité 2026 : la MJCF sera présente en force</p>
-              <span class="jc-item-date"><i class="far fa-clock"></i> 28 mars 2026</span>
+              <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-item">
+                <div class="jc-indicator"></div>
+                <div class="jc-content">
+                  <p class="jc-item-title">Déclaration du Bureau National sur la situation au Venezuela</p>
+                  <span class="jc-item-date"><i class="far fa-clock"></i> 3 avril 2026</span>
+                </div>
+              </a>
+
+              <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-item">
+                <div class="jc-indicator"></div>
+                <div class="jc-content">
+                  <p class="jc-item-title">Fête de l'Humanité 2026 : la MJCF sera présente en force</p>
+                  <span class="jc-item-date"><i class="far fa-clock"></i> 28 mars 2026</span>
+                </div>
+              </a>
             </div>
-          </a>
-        </div>
-      </div>
-      </aside>
-        <article class="card overflow-hidden">
+          </div>
+        </aside>
+        <article class="card overflow-hidden " id="trimestrielle">
+          <div class="jc-header">
+            <span class="jc-label">Édition trimestrielle</span>
+            <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-voir-plus">Tout voir →</a>
+          </div>
           <!--<div class="p-4 border-b">
             <p class="sidebar-label">Édition trimestrielle</p>
             <h2 class="sidebar-title">Cuba, récit d’une révolution en lutte</h2>
@@ -328,7 +324,7 @@
     </div>
 
   </main>
-  <div class="newsletter-box">
+  <div class="newsletter-box" id="follow">
     <section class="newsletter-card">
       <!---->
       <h2>L'Avant-Garde</h2>
