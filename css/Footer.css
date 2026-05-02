@@ -1,3 +1,8 @@
+/**
+ * PROJECT: L'Avant-Garde
+ * FILE: footer.css
+ * DESC: Styles du pied de page (liens, réseaux sociaux, mentions légales).
+ */
 .main-footer {
     background-color: white;
     /* Ou var(--slate-900) pour un footer sombre */

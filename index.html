@@ -11,7 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
 
-  <script src="./script/menu.js" defer></script>
+  <script src="./js/menu.js" defer></script>
+  <script src="./js/video.js" defer></script>
 </head>
 
 <body class="bg-slate-100">
@@ -39,13 +40,13 @@
         </div>
         <div class="logo-wrapper">
           <a href="./index.html" class="logo-link">
-            <img src="./img/BigAg.png" alt="Logo L'Avant-Garde" class="logo-img">
+            <img src="./assets/BigAg.png" alt="Logo L'Avant-Garde" class="logo-img">
             <p class="tagline">Journal des jeunes communistes</p>
           </a>
         </div>
         <div class="header-meta-right">
           <a href="./Linktree.html" class="ag-plus-btn">
-            <img src="./img/AG+.png" alt="AG+">
+            <img src="./assets/AG+.png" alt="AG+">
           </a>
         </div>
       </div>
@@ -57,50 +58,16 @@
           <li><a href="./categorie.html">Environnement </a></li>
           <li><a href="./categorie.html">Éducation </a></li>
           <li><a href="./categorie.html">Culture</a></li>
-          <li class="mobile-only"><!--<a href="./Linktree.html"><img src="./AG+.png" class="logo-AG">-->
+          <li class="mobile-only">
 
             <a href="./Linktree.html" class="ag-plus-btn">
-              <img src="./img/AG+.png" alt="AG+">
+              <img src="./assets/AG+.png" alt="AG+">
             </a>
 
           </li>
           <li class="mobile-only"><a href="./categorie.html">A propos </a></li>
           <li class="mobile-only"><a href="./categorie.html">Archive</a></li>
         </ul>
-
-
-        <script>
-
-          // JavaScript pour ajouter la classe "scrolled" au défilement
-
-          const burger = document.getElementById('burger');
-          const nav = document.querySelector('.menu');
-         // window.onscroll = checkHeaderStatus;
-          //window.onresize = checkHeaderStatus;
-          //checkHeaderStatus();
-
-
-
-          burger.addEventListener('click', () => {
-
-            if (window.scrollY === 0) {
-              //window.scrollTo(0, 85); // Descend de 85 pixels immédiatement
-              // Toggle du menu
-              nav.classList.toggle('nav-active');
-              // Toggle du scroll sur le body
-              document.body.classList.toggle('no-scroll');
-              // Animation du bouton burger
-              burger.classList.toggle('toggle');
-            } else {
-              // Toggle du menu
-              nav.classList.toggle('nav-active');
-              // Toggle du scroll sur le body
-              document.body.classList.toggle('no-scroll');
-              // Animation du bouton burger
-              burger.classList.toggle('toggle');
-            }
-          });
-        </script>
       </nav>
     </div>
   </header>
@@ -219,63 +186,20 @@
           </div>
         </div>
 
-        <article id="yt-block" class="card">
+        <article id="yt-block" class="card yt-card">
 
           <div class="jc-header">
             <span class="jc-label"> À DÉCOUVRIR DANS L'AVANT-GARDE PLUS</span>
             <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-voir-plus">Tout voir →</a>
           </div>
-          <!--<p class="sidebar-label"> À DÉCOUVRIR DANS L'AVANT-GARDE PLUS</p>
-          <h2 id="yt-title" class="sidebar-title">Chargement...</h2>-->
 
-          <a href="#" class="yt-thumb"><img src="https://img.youtube.com/vi/Cd6dvZAmHgQ/maxresdefault.jpg" alt="">
-            <div class="btn-12"><svg viewBox="0 0 24 24" width="2000" height="48" fill="currentColor">
+          <a href="#" class="yt-thumb"><img src="https://img.youtube.com/vi/Cd6dvZAmHgQ/maxresdefault.jpg" >
+            <div class="btn1"><svg viewBox="0 0 24 24" width="2000" height="48" fill="currentColor">
                 <path d="M8 5v14l11-7z" />
               </svg></div>
           </a>
         </article>
 
-        <script>
-          (async function () {
-            const API_KEY = 'AIzaSyDWH_Ovncn32d1Prtqo4t0cVOfnOxFTUmQ';
-            const PLAYLIST_ID = 'PLMc3QN4Bpy7r6s_6mbCti-iO6puJSEOLD'; // Mettez ici l'ID de la playlist cible
-
-            try {
-              // 1. On récupère les 10 derniers items de la PLAYLIST
-              const listRes = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=10&key=${API_KEY}`);
-              const listData = await listRes.json();
-
-              if (!listData.items || listData.items.length === 0) {
-                document.getElementById('yt-title').innerText = "Playlist vide ou introuvable";
-                return;
-              }
-
-              // On extrait les IDs des vidéos pour vérifier leur durée
-              const videoIds = listData.items.map(item => item.snippet.resourceId.videoId).join(',');
-
-              // 3. On récupère les détails techniques (durée)
-              const videoRes = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoIds}&key=${API_KEY}`);
-              const videoData = await videoRes.json();
-              // On prend la vidéo longue trouvée, sinon la toute première par défaut
-              const finalVideo = videoData.items[0];
-
-              // 4. Mise à jour de l'interface
-              document.getElementById('yt-title').innerText = finalVideo.snippet.title;
-              document.getElementById('yt-link').href = `https://www.youtube.com/watch?v=${finalVideo.id}`;
-
-              const img = document.getElementById('yt-thumb-img');
-              img.src = finalVideo.snippet.thumbnails.high.url;
-              img.style.display = 'block';
-
-            } catch (error) {
-              console.error("Erreur de chargement :", error);
-              document.getElementById('yt-title').innerText = "Erreur de connexion";
-            }
-          }
-          )();
-        </script>
-
-        <aside class="sidebar">
           <div class="card">
             <div class="jc-header">
               <span class="jc-label">Les dernières déclarations du MJCF</span>
@@ -308,25 +232,22 @@
               </a>
             </div>
           </div>
-        </aside>
+        
         <article class="card overflow-hidden " id="trimestrielle">
           <div class="jc-header">
             <span class="jc-label">Édition trimestrielle</span>
             <a href="https://www.jeunes-communistes.fr/actualites/page/1" class="jc-voir-plus">Tout voir →</a>
           </div>
-          <!--<div class="p-4 border-b">
-            <p class="sidebar-label">Édition trimestrielle</p>
-            <h2 class="sidebar-title">Cuba, récit d’une révolution en lutte</h2>
-          </div> -->
+          
           <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/10/AG66-COUV.png" class="w-full" alt="Couverture">
         </article>
-
+      </aside>
     </div>
 
   </main>
-  <div class="newsletter-box" id="follow">
+  <div class="newsletter-box " id="follow">
     <section class="newsletter-card">
-      <!---->
+      
       <h2>L'Avant-Garde</h2>
       <p class="newsletter-desc">Décryptages politiques et actus militantes : reçois nos infos où tu veux.</p>
 

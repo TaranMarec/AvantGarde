@@ -1,16 +1,19 @@
+<!-- 
+  FILE : Linktree.html
+  DESC : Portail de redirection vers les réseaux sociaux de L'Avant-Garde+.
+  STYLE: sytleLinktree.css
+-->
+
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AG+ | L'Avant-Garde</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./Style/sytleLinktree.css">
-    <style>
-      
-    </style>
+    <link rel="stylesheet" href="./css/sytleLinktree.css">
+<script src="./js/video.js" defer></script>
 </head>
 
 <body>
@@ -63,34 +66,7 @@
         <a href="./index.html" class="back-link">Retour au site principal</a>
     </div>
 
-    <script>
-        /** * Script YouTube Dynamique
-         */
-        (async function () {
-            const API_KEY = 'AIzaSyDWH_Ovncn32d1Prtqo4t0cVOfnOxFTUmQ';
-            const PLAYLIST_ID = 'PLMc3QN4Bpy7r6s_6mbCti-iO6puJSEOLD';
-
-            try {
-                const listRes = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=1&key=${API_KEY}`);
-                const listData = await listRes.json();
-
-                if (listData.items && listData.items.length > 0) {
-                    const video = listData.items[0].snippet;
-                    const videoId = video.resourceId.videoId;
-
-                    document.getElementById('yt-title').innerText = video.title;
-                    document.getElementById('yt-link').href = `https://www.youtube.com/watch?v=${videoId}`;
-
-                    const img = document.getElementById('yt-thumb-img');
-                    img.src = video.thumbnails.high.url;
-                    img.style.display = 'block';
-                }
-            } catch (error) {
-                console.error("Erreur YouTube:", error);
-                document.getElementById('yt-title').innerText = "Voir nos dernières vidéos sur YouTube";
-            }
-        })();
-    </script>
+ 
 
 </body>
 

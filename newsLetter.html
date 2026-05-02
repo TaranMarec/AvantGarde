@@ -1,6 +1,9 @@
+<!-- 
+  FILE : newsletter.html
+  DESC : Page de confirmation de succès après inscription au formulaire.
+-->
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <title>Merci de votre inscription – L'Avant-Garde</title>
@@ -10,16 +13,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="./js/menu.js" defer></script>
 </head>
 
 <body class="bg-slate-100">
 
-  <header id="main-header">
+    <header id="main-header">
     <div class="container header-content">
       <div class="header-top">
         <div class="header-meta-left">
-          <a href="#" class="pc-only">Archives</a>
-          <a href="#" class="pc-only">À propos</a>
+          <ul>
+            <li>
+              <a href="#" class="pc-only">Archives</a>
+            </li>
+            <li>
+              <a href="#" class="pc-only">À propos</a>
+            </li>
+            <li>
+              <a href="#follow" class="pc-only">Abonez vous</a>
+            </li>
+          </ul>
           <button class="burger" id="burger">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -28,108 +41,40 @@
         </div>
         <div class="logo-wrapper">
           <a href="./index.html" class="logo-link">
-            <img
-              src="./img/BigAg.png"
-              alt="Logo L'Avant-Garde" class="logo-img">
+            <img src="./assets/BigAg.png" alt="Logo L'Avant-Garde" class="logo-img">
             <p class="tagline">Journal des jeunes communistes</p>
           </a>
         </div>
         <div class="header-meta-right">
           <a href="./Linktree.html" class="ag-plus-btn">
-            <img src="./img/AG+.png" alt="AG+">
+            <img src="./assets/AG+.png" alt="AG+">
           </a>
         </div>
       </div>
       <nav class="main-nav">
         <ul class="menu">
-          <li>
-            <a href="./categorie.html">FRANCE</a>
-          </li>
           <li><a href="./categorie.html">International</a></li>
           <li><a href="./categorie.html">Social-Éco</a></li>
           <li><a href="./categorie.html">Politique et Société </a></li>
           <li><a href="./categorie.html">Environnement </a></li>
           <li><a href="./categorie.html">Éducation </a></li>
           <li><a href="./categorie.html">Culture</a></li>
-          <li class="mobile-only"><!--<a href="./Linktree.html"><img src="./AG+.png" class="logo-AG">-->
+          <li class="mobile-only">
 
             <a href="./Linktree.html" class="ag-plus-btn">
-              <img src="./img/AG+.png" alt="AG+">
+              <img src="./assets/AG+.png" alt="AG+">
             </a>
 
           </li>
           <li class="mobile-only"><a href="./categorie.html">A propos </a></li>
           <li class="mobile-only"><a href="./categorie.html">Archive</a></li>
         </ul>
-
-
-        <script>
-
-          // JavaScript pour ajouter la classe "scrolled" au défilement
-          function checkHeaderStatus() {
-            const header = document.getElementById("main-header");
-            const logoImg = document.querySelector(".logo-img");
-            // const logoCompact = "./AGROUGE.png";
-            //const logoHero = "./BigAg.png";
-            // Si on a scrollé de plus de 80px
-
-            if (header) {
-              if (window.innerWidth <= 440 || window.pageYOffset > 80) {
-                header.classList.add("scrolled");
-                // logoImg.src = logoCompact;
-              } else {
-                header.classList.remove("scrolled");
-                //  logoImg.src = logoHero;
-              }
-            } else {
-              console.error("L'élément #main-header n'a pas été trouvé dans le HTML !");
-            }
-          };
-          const burger = document.getElementById('burger');
-          const nav = document.querySelector('.menu');
-          window.onscroll = checkHeaderStatus;
-          window.onresize = checkHeaderStatus;
-          checkHeaderStatus();
-
-
-
-          burger.addEventListener('click', () => {
-
-            if (window.scrollY === 0) {
-              //window.scrollTo(0, 85); // Descend de 85 pixels immédiatement
-              // Toggle du menu
-              nav.classList.toggle('nav-active');
-              // Toggle du scroll sur le body
-              document.body.classList.toggle('no-scroll');
-              // Animation du bouton burger
-              burger.classList.toggle('toggle');
-            } else {
-              // Toggle du menu
-              nav.classList.toggle('nav-active');
-              // Toggle du scroll sur le body
-              document.body.classList.toggle('no-scroll');
-              // Animation du bouton burger
-              burger.classList.toggle('toggle');
-            }
-          });
-        </script>
       </nav>
     </div>
   </header>
-  <!-- <div class="category-bar">
-      <nav class="category-nav">
-        <ul>
-          <li><a href="#">Afrique</a></li>
-          <li><a href="#">Amériques</a></li>
-          <li><a href="#">Asie</a></li>
-          <li><a href="#">Europe</a></li>
-          <li><a href="#">Monde</a></li>
-          <li><a href="#">Palestine</a></li>
-        </ul>
-      </nav>
-    </div>-->
 
-    <main class="container" style="margin-top: 5rem; margin-bottom: 5rem; display: flex; justify-content: center;">
+
+    <main class="container main-content" style="margin-top: 10rem; margin-bottom: 5rem; display: flex; justify-content: center;">
 
         <article class="card newsletter-card" style="max-width: 600px;">
             <div class="p-4">

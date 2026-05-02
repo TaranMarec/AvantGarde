@@ -1,4 +1,10 @@
-/* VARIABLES & RESET */
+/**
+ * PROJECT: L'Avant-Garde
+ * FILE: body.css
+ * DESC: Mise en page centrale, grille d'articles et design des cartes (cards).
+ */
+ 
+ /* VARIABLES & RESET */
 :root {
     --ag-red: #b91c1c;
     --ag-red-hover: #991b1b;
@@ -309,69 +315,49 @@ a {
     color: #FF0000;
     /* On le met en rouge pour le style ! */
 }
+        .yt-thumb { position: relative; display: block; overflow: hidden; border-radius: 8px; background: #000; text-decoration: none; }
+        .yt-thumb img { width: 100%; display: block; transition: transform 0.6s ease, filter 0.4s ease; opacity: 0.9; }
+        .yt-thumb:hover img { transform: scale(1.08); opacity: 1; }
 
-.yt-thumb {
-    position: relative;
-    display: block;
-    margin: 0.75rem;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    aspect-ratio: 16/9;
-}
-
-.yt-thumb img {
-    width: 100%;
-    display: block;
-    transition: transform 0.6s ease, filter 0.4s ease;
-    opacity: 0.9;
-}
-
-.yt-thumb:hover img {
-    transform: scale(1.08);
-    opacity: 1;
-}
-
-/*.play-btn {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center        .style-12 { background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0)); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 8px 32px 0 rgba(0,0,0,0.1); }
-
-}
-;
-.play-btn span {
-position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(255,255,255,0.2); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem; color: white; transition: 0.3s;
-
-}
-        .play-btn:hover .play-btn{ background: rgba(206,0,26,0.5); border-color: var(--ag-red); }*/
-
-
-
-.btn-12 {
+.btn1{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 64px;
+    height: 64px;
+    background: white;
     border-radius: 50%;
+    color: var(--ag-red);
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    color: white;
+    justify-content: center;
+    font-size: 1.8rem;
     transition: 0.3s;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
 }
 
-.yt-block:hover .btn-12 {
-    background: rgba(206, 0, 26, 0.5);
-    border-color: var(--ag-red);
+.yt-card:hover .btn1 {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--ag-red);
+    color: white;
+    animation: pulseMax 1.5s infinite;
 }
+
+@keyframes pulseMax {
+    0% {
+        box-shadow: 0 0 0 0 rgba(206, 0, 26, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(206, 0, 26, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(206, 0, 26, 0);
+    }
+}
+
 
 .tags-cloud {
     display: flex;
@@ -809,13 +795,13 @@ h1 {
 }
 
 .article_btn {
-     display: flex;
+    display: flex;
     width: 9rem;
     align-items: center;
 
-            justify-content: center;
-            gap: 8px;
-            padding: 12px;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
     background: var(--ag-red);
     color: white;
     font-size: 0.75rem;
@@ -827,7 +813,11 @@ h1 {
     transition: background 0.2s;
     transition: transform 0.6s ease, filter 0.4s ease;
 }
-.article_btn svg{fill: white;}
+
+.article_btn svg {
+    fill: white;
+}
+
 .article_btn:hover {
     background: var(--ag-red-hover);
     transform: scale(1.2);
@@ -836,66 +826,84 @@ h1 {
 .actions {
     display: flex;
     gap: 2rem;
-        align-items: left;
+    align-items: left;
 
-            justify-content: left;
+    justify-content: left;
 
 }
 
 
-        /*Formulaire de contacte*/
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-            z-index: 10;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 400px;
-            z-index: 11;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
+/*Formulaire de contacte*/
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
 
-        /* Bouton fermer (croix) */
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #888;
-            line-height: 1;
-        }
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    z-index: 11;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
 
-        .close-modal:hover { color: #000; }
+/* Bouton fermer (croix) */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+}
 
-        form { display: flex; flex-direction: column; gap: 10px; }
-        input, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; }
-        
-        .form-footer {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
+.close-modal:hover {
+    color: #000;
+}
 
-        .submit-btn { 
-            flex: 2;
-            background: var(--ag-red); 
-            color: white; 
-            border: none; 
-            padding: 12px; 
-            border-radius: 6px; 
-            cursor: pointer; 
-            font-weight: bold;
-        }
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.form-footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    flex: 2;
+    background: var(--ag-red);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}

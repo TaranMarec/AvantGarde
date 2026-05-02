@@ -1,0 +1,200 @@
+/**
+ * PROJECT: L'Avant-Garde
+ * FILE: menu.css
+ * DESC: Navigation principale, animations burger et état "scrolled".
+ */
+ 
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--slate-300);
+    border-radius: 0.75rem;
+    outline: none;
+}
+
+/* Youtube*/
+
+.play-geant {
+    /* On utilise 100% pour qu'il prenne toute la largeur de son conteneur */
+    width: 100%;
+    max-width: 2000px;
+    /* Mais on limite à 2000px maximum */
+    height: auto;
+    /* La hauteur s'ajuste toute seule pour ne pas déformer */
+    color: #FF0000;
+    /* On le met en rouge pour le style ! */
+}
+
+.yt-thumb {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #000;
+    text-decoration: none;
+    margin: 0.75rem;
+}
+
+.yt-thumb img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease, filter 0.4s ease;
+    opacity: 0.9;
+}
+
+.yt-thumb:hover img {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.btn1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: white;
+    border-radius: 50%;
+    color: var(--ag-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    transition: 0.3s;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+}
+
+.yt-card:hover .btn1 {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--ag-red);
+    color: white;
+    animation: pulseMax 1.5s infinite;
+}
+
+@keyframes pulseMax {
+    0% {
+        box-shadow: 0 0 0 0 rgba(206, 0, 26, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(206, 0, 26, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(206, 0, 26, 0);
+    }
+}
+
+.yt-thumb:hover img {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+/* Bloc JC Amélioré */
+.jc-card {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.jc-header {
+    padding: 1.1rem 1.25rem;
+    background: linear-gradient(to right, #fff5f5, white);
+    border-bottom: 1px solid var(--slate-100);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.jc-logo {
+    height: 26px;
+    width: auto;
+    object-fit: contain;
+}
+
+.jc-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ag-red);
+    flex: 1;
+}
+
+.jc-voir-plus {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--slate-400);
+    text-transform: uppercase;
+}
+
+.jc-voir-plus:hover {
+    color: var(--ag-red);
+}
+
+.jc-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    border-bottom: 1px solid var(--slate-50);
+    transition: all 0.25s ease;
+    text-decoration: none;
+    align-items: center;
+}
+
+.jc-item:last-child {
+    border-bottom: none;
+}
+
+.jc-item:hover {
+    background-color: #fffafb;
+    transform: translateX(5px);
+}
+
+.jc-indicator {
+    width: 3px;
+    height: 32px;
+    background: var(--slate-200);
+    border-radius: 2px;
+    transition: background 0.3s;
+    flex-shrink: 0;
+}
+
+.jc-item:hover .jc-indicator {
+    background: var(--ag-red);
+}
+
+.jc-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.jc-item-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--slate-900);
+    transition: color 0.2s;
+}
+
+.jc-item:hover .jc-item-title {
+    color: var(--ag-red);
+}
+
+.jc-item-date {
+    font-size: 0.68rem;
+    color: var(--slate-400);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}

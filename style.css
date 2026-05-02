@@ -1,4 +1,6 @@
 
-@import "./Style/Header.css";
-@import "./Style/Body.css";
-@import "./Style/Footer.css";
+@import "./css/Header.css";
+@import "./css/Body.css";
+@import "./css/Footer.css";
+@import "./css/sidebar.css";
+@import "./css/Newsletter.css"
