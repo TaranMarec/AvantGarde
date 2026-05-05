@@ -6,14 +6,15 @@
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AG+ | L'Avant-Garde</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/sidebar.css">
     <link rel="stylesheet" href="./css/sytleLinktree.css">
-<script src="./js/video.js" defer></script>
+    <script src="./js/video.js" defer></script>
 </head>
 
 <body>
@@ -26,13 +27,19 @@
 
         <h2 class="yt-section-header">NOTRE CHAÎNE YOUTUBE :</h2>
         <div class="yt-card">
-            <a href="#" id="yt-link" target="_blank">
-                <div class="yt-thumb-wrapper">
-                    <img id="yt-thumb-img" src="" alt="Thumbnail" style="display:none;">
-                    <div class="play-overlay"><i class="fab fa-youtube"></i></div>
-                </div>
-                <span id="yt-title">Chargement de la dernière vidéo...</span>
-            </a>
+            <div class="yt-thumb-wrapper">
+                <a href="#" class="yt-thumb"><img src="https://img.youtube.com/vi/Cd6dvZAmHgQ/maxresdefault.jpg">
+                    <div class="btn1">
+                        <svg viewBox="0 0 24 24" width="2000" height="48" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+
+                    </div>
+
+                </a>
+            </div>
+            <span id="yt-title">Chargement de la dernière vidéo...</span>
+
         </div>
 
         <div class="links-wrapper">
@@ -65,9 +72,6 @@
 
         <a href="./index.html" class="back-link">Retour au site principal</a>
     </div>
-
- 
-
 </body>
 
 </html>

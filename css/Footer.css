@@ -1,65 +1,56 @@
 /**
  * PROJECT: L'Avant-Garde
  * FILE: footer.css
- * DESC: Styles du pied de page (liens, réseaux sociaux, mentions légales).
+ * DESC: Version ultra-légère et resserrée.
  */
-.main-footer {
-    background-color: white;
-    /* Ou var(--slate-900) pour un footer sombre */
-    border-top: 1px solid var(--slate-200);
-    padding: 3rem 0;
-    margin-top: 4rem;
-    color: var(--slate-500);
+
+.site-footer {
+    background-color: #ffffff; /* Fond blanc pur */
+    border-top: 1px solid #eeeeee; /* Bordure très fine */
+    padding: 2.5rem 0; /* Réduction de la hauteur globale */
+    margin-top: 3rem; /* Espacement raisonnable avec le bloc newsletter[cite: 6] */
 }
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    text-align: center;
+.footer-container {
+    /* Largeur réduite (800px au lieu de 1140px) pour éviter que les colonnes soient trop loin les unes des autres */
+    max-width: 800px; 
+    margin: 0 auto;
+    display: grid;
+    /* On définit des colonnes qui s'adaptent au contenu plutôt que de forcer 100% de largeur */
+    grid-template-columns: auto auto auto;
+    justify-content: space-between; /* Les colonnes se répartissent proprement avec l'espace restant au milieu */
+    padding: 0 20px;
 }
 
-/* Sur tablette et ordinateur, on aligne à gauche et à droite */
-@media (min-width: 768px) {
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
+/* Style des listes */
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 0.5rem; /* Espacement vertical réduit pour un aspect moins "gros"[cite: 6] */
+}
+
+/* Style des liens : plus petits et plus discrets */
+.footer-menu a {
+    text-decoration: none;
+    color: #444444; /* Gris foncé au lieu de noir pur pour plus de légèreté[cite: 6] */
+    font-size: 0.85rem; /* Taille réduite pour un aspect plus "footer"[cite: 6] */
+    font-weight: 400; /* Moins épais */
+    transition: color 0.2s ease;
+}
+
+.footer-menu a:hover {
+    color: #e2001a; /* Rouge caractéristique au survol[cite: 6] */
+}
+
+/* Responsive : passage en colonne sur mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
     }
-}
-
-.footer-info p {
-    font-size: 0.85rem;
-    margin: 0.25rem 0;
-}
-
-.footer-tagline {
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 0.7rem;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.footer-links a {
-    font-size: 0.85rem;
-    color: var(--slate-600);
-}
-
-.footer-links a:hover {
-    color: var(--ag-red);
-    text-decoration: underline;
-}
-
-.newsletter-box {
-    display: flex;
-    justify-content: center;
-    width: 100%;
 }

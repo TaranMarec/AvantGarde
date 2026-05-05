@@ -5,9 +5,12 @@
  */
  
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+
+
+    position: sticky;
+    top: 20px; /* Distance avec le haut de la fenêtre */
+    align-self: start; /* Empêche la sidebar de s'étirer bizarrement */
+    height: auto; /* Laisse le contenu définir la hauteur */
 }
 
 .search-box input {
@@ -21,14 +24,10 @@
 /* Youtube*/
 
 .play-geant {
-    /* On utilise 100% pour qu'il prenne toute la largeur de son conteneur */
     width: 100%;
-    max-width: 2000px;
-    /* Mais on limite à 2000px maximum */
+    max-width: 2000px; 
     height: auto;
-    /* La hauteur s'ajuste toute seule pour ne pas déformer */
     color: #FF0000;
-    /* On le met en rouge pour le style ! */
 }
 
 .yt-thumb {
