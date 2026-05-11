@@ -3,69 +3,9 @@
  * FILE: header.css
  * DESC: Navigation principale, animations burger et état "scrolled".
  */
- 
- /* VARIABLES & RESET */
-:root {
-    --ag-red: #b91c1c;
-    --ag-red-hover: #991b1b;
-    --slate-100: #f1f5f9;
-    --slate-200: #e2e8f0;
-    --slate-300: #cbd5e1;
-    --slate-500: #64748b;
-    --slate-600: #475569;
-    --slate-900: #0f172a;
-}
 
-html,
-body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+/* VARIABLES & RESET */
 
-    overflow-x: hidden;
-}
-
-html {
-    /* Empêche le saut de mise en page sur PC */
-    scrollbar-gutter: stable;
-}
-
-body.no-scroll {
-    overflow: hidden;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-
-    font-family: 'Inter', sans-serif;
-    background-color: var(--slate-100);
-    color: var(--slate-900);
-    line-height: 1.5;
-}
-
-li {
-    list-style: none;
-
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: 0.2s;
-    vertical-align: middle;
-}
-
-.container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0.5rem;
-
-}
 
 /* HEADER */
 #main-header {
@@ -127,7 +67,7 @@ a {
     color: var(--slate-500);
     align-items: center;
     min-width: 120px;
-  
+
 }
 
 
@@ -135,7 +75,11 @@ a {
 .header-meta-left a:hover {
     color: var(--ag-red);
 }
-.header-meta-left li{margin-top: 0.4rem;}
+
+.header-meta-left li {
+    margin-top: 0.4rem;
+}
+
 .logo-wrapper {
     display: flex;
     align-items: center;
@@ -169,7 +113,7 @@ a {
     height: 5rem;
     padding-bottom: 0.2rem;
     padding-top: 0;
-    transition:  0.3s;
+    transition: 0.3s;
     /*transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;*/
 }
 
@@ -241,21 +185,23 @@ a {
     line-height: 0.1;
     transition: all 0.4s ease;
 }
-.logo-link:hover .logo-img {
-      /* L'image grossit de 8% et monte de 5px */
-      transform: scale(1.08) translateY(-4px);
-      /* Ajout d'une ombre douce pour l'effet de décollement */
-      filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.12));
-    }
 
-    .logo-link:hover .tagline {
-      /* Le texte prend le rouge de la marque */
-      color: var(--ag-red);
-      /* L'espacement des lettres s'agrandit pour un effet "cinématique" */
-      letter-spacing: 0.28em;
-      /* Le texte descend légèrement pour accompagner l'ouverture */
-      transform: translateY(3px);
-    }
+.logo-link:hover .logo-img {
+    /* L'image grossit de 8% et monte de 5px */
+    transform: scale(1.08) translateY(-4px);
+    /* Ajout d'une ombre douce pour l'effet de décollement */
+    filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.12));
+}
+
+.logo-link:hover .tagline {
+    /* Le texte prend le rouge de la marque */
+    color: var(--ag-red);
+    /* L'espacement des lettres s'agrandit pour un effet "cinématique" */
+    letter-spacing: 0.28em;
+    /* Le texte descend légèrement pour accompagner l'ouverture */
+    transform: translateY(3px);
+}
+
 #main-header.scrolled .tagline {
     opacity: 0;
     visibility: hidden;
@@ -463,3 +409,13 @@ a {
     }
 }
 
+#progress-bar-home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--ag-red);
+    width: 0%;
+    z-index: 99999;
+    pointer-events: none;
+}

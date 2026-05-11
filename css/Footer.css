@@ -4,21 +4,27 @@
  * DESC: Version ultra-légère et resserrée.
  */
 
+
 .site-footer {
-    background-color: #ffffff; /* Fond blanc pur */
-    border-top: 1px solid #eeeeee; /* Bordure très fine */
-    padding: 2.5rem 0; /* Réduction de la hauteur globale */
-    margin-top: 3rem; /* Espacement raisonnable avec le bloc newsletter[cite: 6] */
+    background-color: #ffffff;
+    /* Fond blanc pur */
+    border-top: 1px solid #eeeeee;
+    /* Bordure très fine */
+    padding: 2.5rem 0;
+    /* Réduction de la hauteur globale */
+    margin-top: 3rem;
+    /* Espacement raisonnable avec le bloc newsletter[cite: 6] */
 }
 
 .footer-container {
     /* Largeur réduite (800px au lieu de 1140px) pour éviter que les colonnes soient trop loin les unes des autres */
-    max-width: 800px; 
+    max-width: 800px;
     margin: 0 auto;
     display: grid;
     /* On définit des colonnes qui s'adaptent au contenu plutôt que de forcer 100% de largeur */
     grid-template-columns: auto auto auto;
-    justify-content: space-between; /* Les colonnes se répartissent proprement avec l'espace restant au milieu */
+    justify-content: space-between;
+    /* Les colonnes se répartissent proprement avec l'espace restant au milieu */
     padding: 0 20px;
 }
 
@@ -30,20 +36,25 @@
 }
 
 .footer-menu li {
-    margin-bottom: 0.5rem; /* Espacement vertical réduit pour un aspect moins "gros"[cite: 6] */
+    margin-bottom: 0.5rem;
+    /* Espacement vertical réduit pour un aspect moins "gros"[cite: 6] */
 }
 
 /* Style des liens : plus petits et plus discrets */
 .footer-menu a {
     text-decoration: none;
-    color: #444444; /* Gris foncé au lieu de noir pur pour plus de légèreté[cite: 6] */
-    font-size: 0.85rem; /* Taille réduite pour un aspect plus "footer"[cite: 6] */
-    font-weight: 400; /* Moins épais */
+    color: #444444;
+    /* Gris foncé au lieu de noir pur pour plus de légèreté[cite: 6] */
+    font-size: 0.85rem;
+    /* Taille réduite pour un aspect plus "footer"[cite: 6] */
+    font-weight: 400;
+    /* Moins épais */
     transition: color 0.2s ease;
 }
 
 .footer-menu a:hover {
-    color: #e2001a; /* Rouge caractéristique au survol[cite: 6] */
+    color: #e2001a;
+    /* Rouge caractéristique au survol[cite: 6] */
 }
 
 /* Responsive : passage en colonne sur mobile */

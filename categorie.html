@@ -16,7 +16,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
-
+  <script src="./js/menu.js" defer></script>
+  <script src="./js/video.js" defer></script>
+  <script src="./js/sidebar.js" defer></script>
 </head>
 
 <body class="bg-slate-100">
@@ -74,56 +76,6 @@
         </ul>
 
 
-        <script>
-
-          // JavaScript pour ajouter la classe "scrolled" au défilement
-          function checkHeaderStatus() {
-            const header = document.getElementById("main-header");
-            const logoImg = document.querySelector(".logo-img");
-            // const logoCompact = "./AGROUGE.png";
-            //const logoHero = "./BigAg.png";
-            // Si on a scrollé de plus de 80px
-
-            if (header) {
-              if (window.innerWidth <= 440 || window.pageYOffset > 80) {
-                header.classList.add("scrolled");
-                // logoImg.src = logoCompact;
-              } else {
-                header.classList.remove("scrolled");
-                //  logoImg.src = logoHero;
-              }
-            } else {
-              console.error("L'élément #main-header n'a pas été trouvé dans le HTML !");
-            }
-          };
-          const burger = document.getElementById('burger');
-          const nav = document.querySelector('.menu');
-          window.onscroll = checkHeaderStatus;
-          window.onresize = checkHeaderStatus;
-          checkHeaderStatus();
-
-
-
-          burger.addEventListener('click', () => {
-
-            if (window.scrollY === 0) {
-              //window.scrollTo(0, 85); // Descend de 85 pixels immédiatement
-              // Toggle du menu
-              nav.classList.toggle('nav-active');
-              // Toggle du scroll sur le body
-              document.body.classList.toggle('no-scroll');
-              // Animation du bouton burger
-              burger.classList.toggle('toggle');
-            } else {
-              // Toggle du menu
-              nav.classList.toggle('nav-active');
-              // Toggle du scroll sur le body
-              document.body.classList.toggle('no-scroll');
-              // Animation du bouton burger
-              burger.classList.toggle('toggle');
-            }
-          });
-        </script>
       </nav>
     </div>
   </header>
@@ -272,45 +224,7 @@
           </a>
         </article>
 
-        <script>
-          (async function () {
-            const API_KEY = 'AIzaSyDWH_Ovncn32d1Prtqo4t0cVOfnOxFTUmQ';
-            const PLAYLIST_ID = 'PLMc3QN4Bpy7r6s_6mbCti-iO6puJSEOLD'; // Mettez ici l'ID de la playlist cible
-
-            try {
-              // 1. On récupère les 10 derniers items de la PLAYLIST
-              const listRes = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=10&key=${API_KEY}`);
-              const listData = await listRes.json();
-
-              if (!listData.items || listData.items.length === 0) {
-                document.getElementById('yt-title').innerText = "Playlist vide ou introuvable";
-                return;
-              }
-
-              // On extrait les IDs des vidéos pour vérifier leur durée
-              const videoIds = listData.items.map(item => item.snippet.resourceId.videoId).join(',');
-
-              // 3. On récupère les détails techniques (durée)
-              const videoRes = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,snippet&id=${videoIds}&key=${API_KEY}`);
-              const videoData = await videoRes.json();
-              // On prend la vidéo longue trouvée, sinon la toute première par défaut
-              const finalVideo = videoData.items[0];
-
-              // 4. Mise à jour de l'interface
-              document.getElementById('yt-title').innerText = finalVideo.snippet.title;
-              document.getElementById('yt-link').href = `https://www.youtube.com/watch?v=${finalVideo.id}`;
-
-              const img = document.getElementById('yt-thumb-img');
-              img.src = finalVideo.snippet.thumbnails.high.url;
-              img.style.display = 'block';
-
-            } catch (error) {
-              console.error("Erreur de chargement :", error);
-              document.getElementById('yt-title').innerText = "Erreur de connexion";
-            }
-          }
-          )();
-        </script>
+       
 
           <div class="card">
             <div class="jc-header">

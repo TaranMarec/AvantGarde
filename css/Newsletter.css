@@ -4,6 +4,7 @@
  * DESC: Design de la carte d'abonnement et des canaux de diffusion.
  */
 
+
 .newsletter-box {
     display: flex;
     justify-content: center;
@@ -22,7 +23,7 @@
     /* Supprime la limite de 39rem */
     /* margin-top: 2.5rem;  Ajoute de l'espace avec la grille d'articles */
     padding: 2.5rem;
-    border-radius: 1rem;
+   /* border-radius: 1rem;*/
     /* Aligné sur l'arrondi de vos autres cartes */
     text-align: center;
     border: 1px solid var(--slate-200);
