@@ -1,6 +1,3 @@
----
-layout: null
----
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -18,6 +15,7 @@ layout: null
   <script src="./js/video.js" defer></script>
   <script src="./js/sidebar.js" defer></script>
   <script src="./js/progression.js" defer></script>
+   <script src="./js/fetch.js" defer></script>
 </head>
 
 <body class="bg-slate-100">
@@ -25,58 +23,7 @@ layout: null
 
 
   <header id="main-header">
-    <div class="container header-content">
-      <div class="header-top">
-        <div class="header-meta-left">
-          <ul>
-            <li>
-              <a href="#" class="pc-only">Archives</a>
-            </li>
-            <li>
-              <a href="#" class="pc-only">À propos</a>
-            </li>
-            <li>
-              <a href="#follow" class="pc-only">Abonez vous</a>
-            </li>
-          </ul>
-          <button class="burger" id="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </button>
-        </div>
-        <div class="logo-wrapper">
-          <a href="./index.html" class="logo-link">
-            <img src="./assets/BigAg.png" alt="Logo L'Avant-Garde" class="logo-img">
-            <p class="tagline">Journal des jeunes communistes</p>
-          </a>
-        </div>
-        <div class="header-meta-right">
-          <a href="./Linktree.html" class="ag-plus-btn">
-            <img src="./assets/AG+.png" alt="AG+">
-          </a>
-        </div>
-      </div>
-      <nav class="main-nav">
-        <ul class="menu">
-          <li><a href="./categorie.html">International</a></li>
-          <li><a href="./categorie.html">Social-Éco</a></li>
-          <li><a href="./categorie.html">Politique et Société </a></li>
-          <li><a href="./categorie.html">Environnement </a></li>
-          <li><a href="./categorie.html">Éducation </a></li>
-          <li><a href="./categorie.html">Culture</a></li>
-          <li class="mobile-only">
-
-            <a href="./Linktree.html" class="ag-plus-btn">
-              <img src="./assets/AG+.png" alt="AG+">
-            </a>
-
-          </li>
-          <li class="mobile-only"><a href="./categorie.html">A propos </a></li>
-          <li class="mobile-only"><a href="./categorie.html">Archive</a></li>
-        </ul>
-      </nav>
-    </div>
+    <div id="header-placeholder"></div>
   </header>
 
   <main class="main-content container " id="main-content">
@@ -505,7 +452,7 @@ layout: null
 
       
 <footer class="site-footer">
-    {% include footer.html %}
+    <div id="footer-placeholder"></div>
   </footer>
 </body>
 
