@@ -496,3 +496,26 @@ textarea {
     width: 24px;
     height: 24px;
 }
+
+/* Titres de rubrique élégants */
+.rubrique-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0 1rem;
+}
+.rubrique-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--slate-200);
+}
+.rubrique-title {
+    font-family: 'ITCAvantGarde', 'ITCAvantGardeCn', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ag-red);
+    white-space: nowrap;
+}

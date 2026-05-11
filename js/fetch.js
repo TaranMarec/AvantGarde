@@ -26,5 +26,6 @@ Promise.all(promises).then(() => {
         if (typeof initSidebarLoop === "function") {
             initSidebarLoop();
         }
+        if (typeof initMenu === "function") {initMenu();}
     });
 });
