@@ -1,3 +1,11 @@
+/**
+ * PROJECT: L'Avant-Garde
+ * FILE: sliderArticle.js
+ * DESC: permet de faire defiler sur les coté les card articles forma petit
+ */
+
+/* VARIABLES & RESET */
+
 function initSlider() {  
     // 1. On récupère TOUS les sliders présents sur la page
     const sliders = document.querySelectorAll('.slider-container');

@@ -1,3 +1,11 @@
+/**
+ * PROJECT: L'Avant-Garde
+ * FILE: fetch.css
+ * DESC: composition de la page via les include et lancement de fonction
+ */
+
+/* VARIABLES & RESET */
+
 document.addEventListener("DOMContentLoaded", function() {
     // On utilise les sélecteurs CSS : '#' pour un ID unique, '.' pour une classe multiple
     const components = [

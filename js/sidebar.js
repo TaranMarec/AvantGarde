@@ -1,3 +1,11 @@
+/**
+ * PROJECT: L'Avant-Garde
+ * FILE: sidebar.js
+ * DESC: fonction permet d'avoir toujours des element aficher sur le coté de la sidebar en fesant reboucler les element .
+ */
+
+/* VARIABLES & RESET */
+
 // On crée une fonction exportable
 function initSidebarLoop() {
     const container = document.getElementById('sidebar-loop-container');

@@ -1,3 +1,10 @@
+/**
+ * PROJECT: L'Avant-Garde
+ * FILE: base.css
+ * DESC: variable et configuration de base.
+ */
+
+/* VARIABLES & RESET */
 :root {
     --ag-red: #b91c1c;
     --ag-red-hover: #991b1b;

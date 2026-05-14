@@ -1,3 +1,10 @@
+/**
+ * PROJECT: L'Avant-Garde
+ * FILE: darkMode.js
+ * DESC: fonctionement du bouton darkMode.
+ */
+
+/* VARIABLES & RESET */
 function initDarkMode() {
     const btn = document.getElementById('theme-toggle');
     const html = document.documentElement; // On cible bien la balise html

@@ -1,3 +1,11 @@
+/**
+ * PROJECT: L'Avant-Garde
+ * FILE: progression.js
+ * DESC: bare de progression en haut de la page au défilement de la page
+ */
+
+/* VARIABLES & RESET */
+
 const initScrollProgress = () => {
 
     const bar = document.getElementById('progress-bar-home');
