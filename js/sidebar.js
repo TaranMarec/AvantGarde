@@ -12,10 +12,10 @@ function initSidebarLoop() {
         const contentRect = contentArea.getBoundingClientRect();
         const containerRect = container.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const limit = contentRect.bottom - 500;
+        const limit = contentRect.bottom - 1000;
 
         if (containerRect.bottom < limit) {
-            if (containerRect.bottom < windowHeight + 600) {
+            if (containerRect.bottom < windowHeight + 100) {
                 originalBlocks.forEach(block => {
                     const clone = block.cloneNode(true);
                     container.appendChild(clone);

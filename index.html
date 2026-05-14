@@ -3,22 +3,31 @@
 
 <head>
   <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script>
+    // Ce script s'exécute en une fraction de milliseconde avant l'affichage
+    let theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark-theme');
+    }
+  </script>
   <title>L'Avant-Garde – Maquette édition hebdo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+
   <script src="./js/fetch.js" defer></script>
   <script src="./js/menu.js" defer></script>
   <script src="./js/video.js" defer></script>
   <script src="./js/sidebar.js" defer></script>
   <script src="./js/progression.js" defer></script>
-
+  <script src="./js/darkMode.js" defer></script>
+  <script src="./js/sliderArticles.js" defer></script>
 </head>
 
-<body class="bg-slate-100">
+<body>
   <div id="progress-bar-home"></div>
 
 
@@ -38,296 +47,38 @@
 
       <section class="content-area">
 
-
-        <article class="card hero-article">
-          <a href="./article.html" class="hero-image">
-            <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/04/Plan-de-travail-2.png" alt="Venezuela">
-          </a>
-          <div class="card-body">
-            <div class="meta">
-              <span class="category-tag">Édito</span>
-              <span class="author">Par Assan Lakehoul</span>
-            </div>
-            <h1 class="title-xl">
-              <a href="./article.html">Le Venezuela dans la ligne de mire de l’empire</a>
-            </h1>
-            <p class="excerpt">
-              Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
-              menace d’intervention militaire, mise à prix de la tête du président...
-            </p>
-            <a href="./article.html" class="read-more">Lire l’édito</a>
-          </div>
-        </article>
-
-        <div class="articles-grid">
-          <article class="card">
-            <a href="./article.html" class="thumb"><img
-                src="https://wp.lavantgarde.fr/wp-content/uploads/2025/12/Sans-titre-8.png" alt="COP30"></a>
-            <div class="p-4">
-              <p class="category-text">Climat</p>
-              <h2 class="title-md"><a href="./article.html">À la COP30, les États insulaires, acteurs de leur propre
-                  survie</a></h2>
-              <p class="author-sm">Par Tehei</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="./article.html" class="thumb"><img
-                src="https://wp.lavantgarde.fr/wp-content/uploads/2025/12/Train.png" alt="SNCF">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Transport</p>
-              <h2 class="title-md"><a href="./article.html">SNCF : quand le Grand Est déraille</a></h2>
-              <p class="author-sm">Par Alexian</p>
-            </div>
-          </article>
-        </div>
-
-        <article class="card hero-article">
-          <a href="./article.html" class="hero-image">
-            <img src="https://wp.lavantgarde.fr/wp-content/uploads/2025/12/Train.png" alt="SNCF">
-          </a>
-          <div class="card-body">
-            <div class="meta">
-              <!--<span class="category-tag">Édito</span>-->
-              <span class="author">Par Assan Lakehoul</span>
-            </div>
-            <h1 class="title-xl">
-              <a href="./article.html">LSNCF : quand le Grand Est déraille</a>
-            </h1>
-            <p class="excerpt">
-              Depuis quelques semaines, Washington multiplie les signaux inquiétants à l’égard du Venezuela :
-              menace d’intervention militaire, mise à prix de la tête du président...
-            </p>
-            <a href="./article.html" class="read-more">Lire l’édito</a>
-          </div>
-        </article>
-        <div class="articles-grid">
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F04%2FUniversite_de_Franche-Comte.jpg&w=3840&q=75"
-                alt="Université">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Enseignement</p>
-              <h2 class="title-md"><a href="./article.html">5 700 places en moins à l’université pour la rentrée
-                  2026</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F03%2FIA.png&w=3840&q=75"
-                alt="Lutte sociale">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Social</p>
-              <h2 class="title-md"><a href="./article.html">À Arc France, un sauvetage au prix fort pour les
-                  salariés</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-
-        </div>
+        <div class="edito-placeholder"></div>
+        <div class="articles-placeholder"></div>
+        <div class="articleLarge-placeholder"></div>
+        <div class="articles-placeholder"></div>
         <div class="rubrique-header">
-            <span class="rubrique-title">International</span>
+          <span class="rubrique-title">International</span>
         </div>
-        <div class="articles-grid">
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F04%2FUniversite_de_Franche-Comte.jpg&w=3840&q=75"
-                alt="Université">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Enseignement</p>
-              <h2 class="title-md"><a href="./article.html">5 700 places en moins à l’université pour la rentrée
-                  2026</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F03%2FIA.png&w=3840&q=75"
-                alt="Lutte sociale">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Social</p>
-              <h2 class="title-md"><a href="./article.html">À Arc France, un sauvetage au prix fort pour les
-                  salariés</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-        </div>
+        <div class="articles-placeholder"></div>
         <div class="rubrique-header">
-            <span class="rubrique-title">International</span>
+          <span class="rubrique-title">International</span>
         </div>
-        <div class="articles-grid">
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F04%2FUniversite_de_Franche-Comte.jpg&w=3840&q=75"
-                alt="Université">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Enseignement</p>
-              <h2 class="title-md"><a href="./article.html">5 700 places en moins à l’université pour la rentrée
-                  2026</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F03%2FIA.png&w=3840&q=75"
-                alt="Lutte sociale">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Social</p>
-              <h2 class="title-md"><a href="./article.html">À Arc France, un sauvetage au prix fort pour les
-                  salariés</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-        </div>
+        <div class="articles-placeholder"></div>
         <div class="rubrique-header">
-            <span class="rubrique-title">International</span>
+          <span class="rubrique-title">International</span>
         </div>
-        <div class="articles-grid">
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F04%2FUniversite_de_Franche-Comte.jpg&w=3840&q=75"
-                alt="Université">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Enseignement</p>
-              <h2 class="title-md"><a href="./article.html">5 700 places en moins à l’université pour la rentrée
-                  2026</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F03%2FIA.png&w=3840&q=75"
-                alt="Lutte sociale">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Social</p>
-              <h2 class="title-md"><a href="./article.html">À Arc France, un sauvetage au prix fort pour les
-                  salariés</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-        </div>
+        <div class="articles-placeholder"></div>
         <div class="rubrique-header">
-            <span class="rubrique-title">International</span>
+          <span class="rubrique-title">International</span>
         </div>
-        <div class="articles-grid">
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F04%2FUniversite_de_Franche-Comte.jpg&w=3840&q=75"
-                alt="Université">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Enseignement</p>
-              <h2 class="title-md"><a href="./article.html">5 700 places en moins à l’université pour la rentrée
-                  2026</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F03%2FIA.png&w=3840&q=75"
-                alt="Lutte sociale">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Social</p>
-              <h2 class="title-md"><a href="./article.html">À Arc France, un sauvetage au prix fort pour les
-                  salariés</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-        </div>
+        <div class="articles-placeholder"></div>
         <div class="rubrique-header">
-            <span class="rubrique-title">International</span>
+          <span class="rubrique-title">International</span>
         </div>
-        <div class="articles-grid">
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F04%2FUniversite_de_Franche-Comte.jpg&w=3840&q=75"
-                alt="Université">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Enseignement</p>
-              <h2 class="title-md"><a href="./article.html">5 700 places en moins à l’université pour la rentrée
-                  2026</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F03%2FIA.png&w=3840&q=75"
-                alt="Lutte sociale">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Social</p>
-              <h2 class="title-md"><a href="./article.html">À Arc France, un sauvetage au prix fort pour les
-                  salariés</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-        </div>
+        <div class="articles-placeholder"></div>
         <div class="rubrique-header">
-            <span class="rubrique-title">International</span>
+          <span class="rubrique-title">International</span>
         </div>
-        <div class="articles-grid">
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F04%2FUniversite_de_Franche-Comte.jpg&w=3840&q=75"
-                alt="Université">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Enseignement</p>
-              <h2 class="title-md"><a href="./article.html">5 700 places en moins à l’université pour la rentrée
-                  2026</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <a href="./article.html" class="thumb">
-              <img
-                src="https://lavantgarde.fr/_next/image?url=https%3A%2F%2Fwp.lavantgarde.fr%2Fwp-content%2Fuploads%2F2026%2F03%2FIA.png&w=3840&q=75"
-                alt="Lutte sociale">
-            </a>
-            <div class="p-4">
-              <p class="category-text">Social</p>
-              <h2 class="title-md"><a href="./article.html">À Arc France, un sauvetage au prix fort pour les
-                  salariés</a></h2>
-              <p class="author-sm">Par Rédaction</p>
-            </div>
-          </article>
-        </div>
+        <div class="articles-placeholder"></div>
       </section>
 
       <aside class="sidebar" id="sidebar-aside">
-          <div id="sidebar-placeholder"></div>
+        <div id="sidebar-placeholder"></div>
       </aside>
 
     </div>

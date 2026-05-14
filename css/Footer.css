@@ -6,9 +6,9 @@
 
 
 .site-footer {
-    background-color: #ffffff;
+    background-color: var(--slate-100);
     /* Fond blanc pur */
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid var(--slate-100);
     /* Bordure très fine */
     padding: 2.5rem 0;
     /* Réduction de la hauteur globale */
@@ -43,7 +43,7 @@
 /* Style des liens : plus petits et plus discrets */
 .footer-menu a {
     text-decoration: none;
-    color: #444444;
+    color: var(--slate-600);
     /* Gris foncé au lieu de noir pur pour plus de légèreté[cite: 6] */
     font-size: 0.85rem;
     /* Taille réduite pour un aspect plus "footer"[cite: 6] */
@@ -53,7 +53,7 @@
 }
 
 .footer-menu a:hover {
-    color: #e2001a;
+    color: var(--ag-red);
     /* Rouge caractéristique au survol[cite: 6] */
 }
 
@@ -64,4 +64,45 @@
         text-align: center;
         gap: 2rem;
     }
+}
+
+/* 4. LE BOUTON */
+.btn-theme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border: 2px solid var(--slate-200);
+    border-radius: 12px;
+    background-color: var(--slate-100);
+    color: var(--slate-900);
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+}
+
+.btn-theme:hover {
+    transform: scale(1.05);
+    background-color: var(--slate-200);
+}
+
+.icon-moon {
+    display: none;
+}
+
+body.dark-theme .icon-sun {
+    display: none;
+}
+
+body.dark-theme .icon-moon {
+    display: block;
+}
+
+.alert {
+    color: var(--ag-red);
+    background: var(--ag-soft-red);
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
 }

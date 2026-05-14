@@ -9,7 +9,7 @@
 
 /* HEADER */
 #main-header {
-    background: white;
+    background: var(--slate-100);
     border-bottom: 1px solid var(--slate-200);
     position: fixed;
     z-index: 900;
@@ -18,23 +18,17 @@
 
 }
 
-.main-content {
-    margin-top: 150px;
-    /* Ajuste cette valeur selon la hauteur de ton logo */
-}
-
-/* Sur mobile, on réduit l'espace car le logo est plus petit */
+/* Sur mobile, on réduit l'espace car le logo est plus petit
 @media screen and (max-width: 768px) {
     .main-content {
         margin-top: 140px;
     }
 }
-
+ */
 .header-content {
 
     display: flex;
-    /*justify-content: space-between;
-    align-items: center;*/
+    font-family:'ITC Avant Garde Std', 'Inter', sans-serif;
     flex-direction: column;
     padding-top: 0;
 
@@ -61,7 +55,7 @@
     display: flex;
     gap: 1.5rem;
     font-size: 0.65rem;
-    font-weight: 600;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--slate-500);
@@ -208,24 +202,11 @@
     height: 0;
     margin: 0;
 }
-
-.brand-name {
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
 .text-red {
     color: var(--ag-red);
 }
 
 .main-nav {
-    /* display: flex;
-     Masqué sur mobile par défaut 
-    gap: 1.5rem;
-    font-size: clamp(0.75rem, 0.65vw, 2rem);
-    text-transform: uppercase;
-    font-weight: 850;
-    letter-spacing: 0.1em;*/
     border-top: 2px solid var(--slate-100);
     padding: 0 1rem;
     display: flex;
@@ -233,7 +214,7 @@
     transition: all 0.3s;
     font-size: clamp(0.75rem, 0.65vw, 2rem);
     text-transform: uppercase;
-    font-weight: 850;
+    font-weight: 900;
     letter-spacing: 0.1em;
 
 }
@@ -303,7 +284,7 @@
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--slate-900);
     margin: 5px;
     transition: all 0.3s ease;
 }
@@ -316,10 +297,15 @@
 
 /* --- RESPONSIVE MOBILE (Écrans < 768px) --- */
 @media screen and (max-width: 768px) {
+    .main-nav{ font-size: 1.2rem;}
     .menu a {
-        padding: 0.4rem 0.85rem;
+        padding: 0.2rem 0.85rem;
     }
-
+    .ag-plus-btn img {
+    height: 1.5rem;
+    padding-top: 0.2rem;
+    filter: brightness(0) invert(1);
+}
     .menu {
         position: absolute;
         right: 0;
@@ -384,7 +370,7 @@
     /* Quand le menu est ouvert */
     .nav-active {
         transform: translateX(0%);
-        background-color: white;
+        background-color: var(--slate-100);
         width: 100%;
     }
 

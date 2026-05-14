@@ -1,22 +1,47 @@
 :root {
     --ag-red: #b91c1c;
     --ag-red-hover: #991b1b;
-    --slate-100: #f1f5f9;
+    --ag-soft-red:#fef2f2;
+    --ag-soft-border:#fcd0d0;
+    --back:#f1f5f9;
+    --slate-100: #ffffff;
     --slate-200: #e2e8f0;
     --slate-300: #cbd5e1;
     --slate-500: #64748b;
     --slate-600: #475569;
-    --slate-900: #0f172a;
+    --slate-900: #000000;
 }
+:root.dark-theme {
+/* On garde le rouge mais on adoucit un peu les variantes claires */
+        --ag-red: #ef4444;       /* Rouge un peu plus vif pour mieux ressortir */
+        --ag-red-hover: #f87171;
+        --ag-soft-red: #450a0a;  /* Fond rouge très sombre */
+        --ag-soft-border: #7f1d1d; /* Bordure rouge sombre */
+
+        /* Inversion des fonds et des textes */
+        --back: #020617;         /* Fond de page très sombre */
+        --slate-100: #0f172a;    /* Les cartes/surfaces (anciennement blanches) */
+        --slate-200: #1e293b;    /* Bordures ou séparateurs */
+        --slate-300: #334155;    /* Éléments désactivés */
+        
+        /* Les gris intermédiaires deviennent plus clairs pour être lisibles */
+        --slate-500: #94a3b8; 
+        --slate-600: #cbd5e1;
+        
+        /* Le texte principal (Slate 900) devient blanc ou presque blanc */
+        --slate-900: #f8fafc;
+
+  }
 
 html,
 body {
     width: 100%;
     margin: 0;
     padding: 0;
-
+    
     overflow-x: hidden;
 }
+
 
 html {
     /* Empêche le saut de mise en page sur PC */
@@ -32,11 +57,29 @@ body.no-scroll {
     margin: 0;
     padding: 0;
 }
+@font-face {
+    font-family: 'ITC Avant Garde Std';
+    src: url('../assets/fonts/ITCAvantGardeStd-Bk.ttf') format('truetype');
+    font-weight: 100 500; /* Cette police couvre de 100 à 500 */
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'ITC Avant Garde Std';
+    src: url('../assets/fonts/ITCAvantGardeStd-Bold.ttf') format('truetype');
+    font-weight: 501 900; /* Cette police prend le relais au-dessus de 500 */
+    font-style: normal;
+}
+@font-face {
+font-family: 'ITCAvantGardeCN';
+src: url('../assets/fonts/ITCAvantGardeStd-BkCn.ttf') format('truetype');
+font-weight: 300;
+
+}
 body {
 
-    font-family: 'Inter', sans-serif;
-    background-color: var(--slate-100);
+    font-family: 'ITC Avant Garde Std','ITCAvantGardeCN','Inter', sans-serif;
+    background-color: var(--back);
     color: var(--slate-900);
     line-height: 1.5;
 }
@@ -60,7 +103,12 @@ a {
 
 
 }
-
+p{
+    font-family:'Inter', sans-serif;
+    padding: 400;
+    font-size:  1.05rem; 
+    line-height: 1.85rem;
+}
 .main-content {
     margin-top: 160px;
 

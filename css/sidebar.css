@@ -62,7 +62,7 @@
     transform: translate(-50%, -50%);
     width: 64px;
     height: 64px;
-    background: white;
+    background: var(--slate-100);
     border-radius: 50%;
     color: var(--ag-red);
     display: flex;
@@ -101,7 +101,7 @@
 
 /* Bloc JC Amélioré */
 .jc-card {
-    background: white;
+    background: var(--slate-100);
     border: 1px solid var(--slate-200);
     border-radius: 1rem;
     overflow: hidden;
@@ -110,7 +110,7 @@
 
 .jc-header {
     padding: 1.1rem 1.25rem;
-    background: linear-gradient(to right, #fff5f5, white);
+    background: linear-gradient(to right, var(--ag-soft-red), var(--slate-100));
     border-bottom: 1px solid var(--slate-100);
     display: flex;
     align-items: center;
@@ -158,7 +158,7 @@
 }
 
 .jc-item:hover {
-    background-color: #fffafb;
+    background-color: var(--ag-soft-red);
     transform: translateX(5px);
 }
 
@@ -199,4 +199,123 @@
     display: flex;
     align-items: center;
     gap: 0.35rem;
+}
+
+
+
+.most-read-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.most-read-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.1rem 1.25rem;
+    /* Même padding que .jc-item */
+    border-bottom: 1px solid var(--slate-50);
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+.most-read-item:last-child {
+    border-bottom: none;
+}
+
+/* Animation de décalage identique à JC */
+.most-read-item:hover {
+    background-color: var(--ag-soft-red);
+    transform: translateX(5px);
+}
+
+/* Le numéro : on garde le style imposant mais on ajuste la couleur */
+.most-read-number {
+    font-family: 'ITCAvantGardeCn', 'ITCAvantGarde', sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 0.8;
+    color: var(--slate-200);
+    flex-shrink: 0;
+    width: 2.2rem;
+    text-align: center;
+    margin-top: 0.2rem;
+    /* Aligné sur le haut du titre */
+    transition: color 0.3s ease;
+}
+
+.most-read-item:hover .most-read-number {
+    color: var(--ag-red);
+}
+
+/* Contenu texte aligné sur jc-content */
+.most-read-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.most-read-title {
+    margin: 0;
+    font-size: 0.88rem;
+    /* Identique à .jc-item-title */
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--slate-900);
+    transition: color 0.2s;
+}
+
+.most-read-item:hover .most-read-title {
+    color: var(--ag-red);
+}
+
+.most-read-category {
+    font-size: 0.68rem;
+    /* Identique à .jc-item-date */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--slate-400);
+}
+
+
+
+/* Nouvelle classe pour remplacer le style inline du div */
+.trim-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.trim-numero {
+    font-weight: 300;
+    font-size: 0.63rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--slate-500);
+    margin-top: 1.2rem;
+}
+
+.trim-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 200;
+    font-size: 0.7rem; /* CORRIGÉ : 10rem était beaucoup trop grand */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ag-red);
+    border-bottom: 1px solid rgba(185, 28, 28, 0.25);
+    padding-bottom: 1px;
+    transition: letter-spacing 0.3s;
+    margin-bottom: 0.25rem;
+    text-decoration: none; /* Optionnel : pour enlever le soulignement HTML par défaut */
+}
+
+/* Optionnel : un petit effet au survol pour rendre le bouton interactif */
+.trim-btn:hover {
+    letter-spacing: 0.15em;
+    border-bottom-color: var(--ag-red);
 }
