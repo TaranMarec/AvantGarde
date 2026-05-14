@@ -19,7 +19,9 @@
     }
 }
 
-
+.content-area{
+    max-width: 99vw;
+    }
 
 /* Nom de l'édition*/
 /* Espacement du bloc header */
@@ -519,8 +521,8 @@ textarea {
 }
 
 .slider-track {
-    display: flex !important; /* Force le mode ligne */
-    flex-wrap: nowrap !important; /* EMPÊCHE LE PASSAGE À LA LIGNE */
+    display: flex /*lol*/; /* Force le mode ligne */
+    flex-wrap: nowrap /*lol*/; /* EMPÊCHE LE PASSAGE À LA LIGNE */
     gap: 1.5rem;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: transform;
@@ -550,8 +552,8 @@ textarea {
 }
 
 .slider-track {
-    display: flex !important;
-    flex-wrap: nowrap !important;
+    display: flex /*lol*/;
+    flex-wrap: nowrap /*lol*/;
     gap: 1.5rem;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Animation plus douce */
     will-change: transform;
@@ -575,44 +577,44 @@ textarea {
 
 /* --- CONFIGURATION DU CONTAINER MULTI-SLIDER --- */
 .slider-container {
-    position: relative !important;
-    overflow: hidden !important;
+    position: relative /*lol*/;
+    overflow: hidden /*lol*/;
     width: 100%;
     padding: 1.5rem 0;
 }
 
 .slider-track {
-    display: flex !important;
-    flex-wrap: nowrap !important;
+    display: flex /*lol*/;
+    flex-wrap: nowrap /*lol*/;
     gap: 1.5rem;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
 }
 
 .slider-track .card {
-    flex: 0 0 calc(50% - 0.75rem) !important; 
-    min-width: calc(50% - 0.75rem) !important;
-    margin: 0 !important;
+    flex: 0 0 calc(50% - 0.75rem) /*lol*/; 
+    min-width: calc(50% - 0.75rem) /*lol*/;
+    margin: 0 /*lol*/;
 }
 
 @media (max-width: 600px) {
     .slider-track .card {
-        flex: 0 0 100% !important;
-        min-width: 100% !important;
+        flex: 0 0 100% /*lol*/;
+        min-width: 100% /*lol*/;
     }
 }
 
 /* --- BOUTONS EN PUR CSS (SANS SVG) --- */
 .slider-btn {
-    position: absolute !important;
-    top: 50% !important;
+    position: absolute /*lol*/;
+    top: 50% /*lol*/;
     transform: translateY(-50%);
-    background: var(--slate-100) !important;
-    border: 1px solid var(--slate-200) !important;
-    width: 46px !important;
-    height: 46px !important;
-    border-radius: 50% !important;
-    z-index: 99 !important; /* Force le bouton à flotter au-dessus sans pousser le reste */
+    background: var(--slate-100) /*lol*/;
+    border: 1px solid var(--slate-200) /*lol*/;
+    width: 46px /*lol*/;
+    height: 46px /*lol*/;
+    border-radius: 50% /*lol*/;
+    z-index: 99 /*lol*/; /* Force le bouton à flotter au-dessus sans pousser le reste */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -632,8 +634,8 @@ textarea {
     visibility: visible;
 }
 
-.prev-btn { left: 20px !important; }
-.next-btn { right: 20px !important; }
+.prev-btn { left: 20px ; }
+.next-btn { right: 20px ; }
 
 /* Dessin de la flèche gauche en CSS */
 .prev-btn::before {
@@ -661,11 +663,11 @@ textarea {
 
 /* Effets au survol des boutons */
 .slider-btn:hover {
-    background: var(--ag-red) !important;
-    border-color: var(--ag-red) !important;
+    background: var(--ag-red) ;
+    border-color: var(--ag-red) ;
     transform: translateY(-50%) scale(1.1);
 }
 
 .slider-btn:hover::before {
-    border-color: var(--slate-100) !important; /* La flèche devient blanche */
+    border-color: var(--slate-100) ; /* La flèche devient blanche */
 }
