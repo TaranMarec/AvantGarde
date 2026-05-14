@@ -8,28 +8,29 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
-  <script>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script>
         // Ce script s'exécute en une fraction de milliseconde avant l'affichage
         let theme = localStorage.getItem('theme');
         if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark-theme');
         }
     </script>
-  <title>L'Avant-Garde – Maquette édition hebdo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>L'Avant-Garde – Maquette édition hebdo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <script src="./js/fetch.js" defer></script>
-  <script src="./js/menu.js" defer></script>
-  <script src="./js/video.js" defer></script>
-  <script src="./js/sidebar.js" defer></script>
-  <script src="./js/progression.js" defer></script>
-  <script src="./js/darkMode.js" defer></script>
+    <script src="./js/fetch.js" defer></script>
+    <script src="./js/menu.js" defer></script>
+    <script src="./js/video.js" defer></script>
+    <script src="./js/sidebar.js" defer></script>
+    <script src="./js/progression.js" defer></script>
+    <script src="./js/darkMode.js" defer></script>
+    <script src="./js/PartageContacte.js" defer></script>
 </head>
 
 <body class="bg-slate-100">
@@ -42,8 +43,154 @@
     <main class="container main-content">
         <div class="grid-layout">
             <section class="content-area">
-
                 <article class="article">
+
+                    <header>
+                        <span class="sur-titre">International — Amérique latine</span>
+                        <h1>Où vont les États-Unis avec le Venezuela ?</h1>
+                        <div class="meta">
+                            <span class="auteur">Par Assan Lakehoul</span>
+                            <span class="edition-date">Publié le 4 décembre 2025</span>
+                        </div>
+                        <p class="chapeau">
+                            Menaces d'intervention, sanctions économiques, mise à prix de dirigeants : Washington
+                            multiplie les signaux agressifs envers Caracas. Une vieille histoire d'ingérence se rejoue,
+                            dans un moment où l'Amérique latine tente de reconstruire des marges de souveraineté.
+                        </p>
+                    </header>
+
+                    <figure class="article-figure">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/President_Trump_Delivers_Remarks_to_the_Venezuelan_American_Community_%2847145953601%29.jpg"
+                            alt="Discours de Donald Trump devant la diaspora vénézuélienne">
+                        <figcaption>
+                            Donald Trump lors d'un discours à la communauté vénézuélienne aux États-Unis. /
+                            <span class="credit">Source : Wikimedia Commons</span>
+                        </figcaption>
+                    </figure>
+
+                    <div class="article-content">
+                        <p>
+                            Depuis plusieurs mois, les États-Unis enchaînent les déclarations tonitruantes contre le
+                            Venezuela : sanctions renforcées, menaces à peine voilées d'intervention, mise à prix de
+                            responsables politiques vénézuéliens au nom de la lutte contre le "narcotrafic". Le
+                            vocabulaire change, les prétextes aussi, mais la logique reste la même — maintenir le pays
+                            sous pression permanente, jusqu'à ce que le régime cède ou s'effondre.
+                        </p>
+                        <p>
+                            Cette stratégie ne tombe pas du ciel. Elle s'inscrit dans une longue histoire d'ingérences
+                            en Amérique latine : renversement d'Allende au Chili en 1973, soutien aux dictatures
+                            militaires argentines et brésiliennes, coups d'État "institutionnels" plus récents au
+                            Honduras ou en Bolivie. Washington n'a jamais caché considérer la région comme son
+                            arrière-cour. Le Venezuela, riche en pétrole et dirigé par un gouvernement qui refuse
+                            l'alignement, est depuis vingt ans dans le collimateur.
+                        </p>
+
+                        <h2>Une économie sous perfusion de sanctions</h2>
+
+                        <p>
+                            Les sanctions américaines sont présentées comme "ciblées" contre le gouvernement, mais ce
+                            sont d'abord les Vénézuéliens qui en paient le prix. Depuis 2015, les restrictions se sont
+                            accumulées par vagues successives : gel des avoirs souverains, interdiction des transactions
+                            avec la compagnie pétrolière nationale PDVSA, blocage de l'accès aux marchés financiers
+                            internationaux. Résultat : des difficultés d'approvisionnement en médicaments, une
+                            inflation structurelle et une dépendance accrue aux circuits informels.
+                        </p>
+                        <p>
+                            Les rapports d'experts indépendants mandatés par l'ONU ont régulièrement alerté sur les
+                            effets humanitaires de ces mesures. En 2019, l'économiste Jeffrey Sachs et l'ancien
+                            rapporteur spécial Alfred de Zayas ont chiffré à plusieurs dizaines de milliers le nombre
+                            de morts attribuables aux privations induites par les sanctions — un bilan que Washington
+                            conteste, mais que peu d'observateurs sérieux ignorent.
+                        </p>
+
+                        <h2>La rhétorique du narco-État, un classique du genre</h2>
+
+                        <p>
+                            La mise à prix de dirigeants vénézuéliens — dont le président Maduro lui-même, visé par
+                            une prime de quinze millions de dollars du Département d'État — s'inscrit dans une
+                            rhétorique rodée. L'accusation de narcotrafic permet de contourner les contraintes du droit
+                            international, de criminaliser des adversaires politiques et de légitimer des actions
+                            coercitives aux yeux de l'opinion américaine.
+                        </p>
+                        <p>
+                            Cette méthode n'est pas nouvelle. Manuel Noriega au Panama, les FARC en Colombie, ou plus
+                            récemment des responsables cubains ont été soumis au même traitement. L'étiquette
+                            "narco-État" fonctionne comme un sésame juridique permettant de geler des avoirs, d'exercer
+                            des pressions sur des pays tiers et de préparer l'opinion à d'éventuelles escalades
+                            militaires.
+                        </p>
+
+                        <h2>L'Amérique latine entre résistance et pragmatisme</h2>
+
+                        <p>
+                            Face à cette offensive, la réponse régionale est contrastée. Des gouvernements comme ceux
+                            du Brésil de Lula, du Mexique ou de la Colombie de Petro ont pris leurs distances avec la
+                            politique américaine, refusant de cautionner des sanctions qu'ils jugent
+                            contre-productives. L'Union des nations sud-américaines et la CELAC tentent, non sans
+                            difficultés, de maintenir des espaces de dialogue.
+                        </p>
+                        <p>
+                            Mais la pression économique est telle que peu de pays sont prêts à rompre ouvertement avec
+                            Washington. Le Venezuela se retrouve ainsi dans une position paradoxale : ostracisé sur le
+                            plan diplomatique officiel, mais maintenu à flot par des partenariats discrets avec la
+                            Chine, la Russie et l'Iran — trois puissances que les États-Unis combattent précisément par
+                            d'autres biais.
+                        </p>
+                        <p>
+                            Ce que la séquence actuelle révèle, au fond, c'est moins la dangerosité du Venezuela que
+                            les contradictions de la politique extérieure américaine en période de recomposition
+                            multipolaire. Les vieux outils de la domination — sanctions, mise à prix, rhétorique de
+                            la menace — peinent à produire les effets escomptés. Caracas tient. Et Washington s'agite.
+                        </p>
+                    </div>
+
+                    <div class="actions"
+                        style="margin-top:3rem; padding-top:2rem; border-top:1px solid var(--slate-200); display:flex; gap:1.5rem; align-items:center; max-width:680px; margin-left:auto; margin-right:auto;">
+                        <button class="btn-lettre" onclick="openContact()">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                style="display:block;flex-shrink:0;width:16px;height:16px;">
+                                <path
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                    stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span style="display:block;line-height:1;position:relative;top:0;">Écrire à la
+                                rédaction</span>
+                        </button>
+                        <a onclick="handleNativeShare()"
+                            style="display:inline-flex;align-items:center;gap:0.4rem;font-family:'ITCAvantGarde',sans-serif;font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--slate-500);cursor:pointer;">
+                            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="18" cy="5" r="3" />
+                                <circle cx="6" cy="12" r="3" />
+                                <circle cx="18" cy="19" r="3" />
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                            </svg>
+                            Partager
+                        </a>
+                    </div>
+                    <div class="colophon">
+                        <p>L'Avant-Garde est la publication des Jeunes Communistes de France<br>
+                            Mouvement des Jeunes Communistes de France · lavantgarde.fr</p>
+                    </div>
+
+                    <div id="overlay" onclick="closeContact()"></div>
+                    <div id="contact-modal" class="modal">
+                        <button class="close-modal" onclick="closeContact()">&times;</button>
+                        <h3>Nous contacter</h3>
+                        <form onsubmit="sendForm(event)">
+                            <input type="email" placeholder="Votre email" required>
+                            <textarea rows="4" placeholder="Votre message..." required></textarea>
+
+                            <div class="form-footer">
+                                <button type="submit" class="submit-btn">Envoyer</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </article>
+                <!-- <article class="article">
 
                     <header>
                         <span class="sur-titre">International — Amérique latine</span>
@@ -175,12 +322,12 @@
                         </div>
 
                     </article>
-                </div>
+                </div>-->
             </section>
-            <aside class="sidebar" id="sidebar-aside">
-                <div id="sidebar-placeholder"></div>
-            </aside>
-    </div>
+                <aside class="sidebar" id="sidebar-aside">
+                    <div id="sidebar-placeholder"></div>
+                </aside>
+        </div>
 
     </main>
     <div id="newsletter-placeholder"></div>

@@ -1,0 +1,245 @@
+ 
+        .article {
+            background: var(--slate-100);
+            border: 1px solid var(--slate-400);
+            border-radius: 0;
+            box-shadow: var(--slate-900);
+            padding: 3rem 4rem;
+            transform: rotate(-0.3deg);
+            transition: background 0.3s ease, border 0.3s ease;
+            /* Optionnel : pour une transition douce */
+        }
+
+        @media (max-width: 768px) {
+            .article {
+                padding: 1.25rem 1rem;
+            }
+        }
+
+        /* 2 — Machine à écrire */
+        .sur-titre {
+            border-right: 2px solid transparent;
+        }
+
+        .sur-titre.typing {
+            border-right: 2px solid var(--ag-red);
+            animation: blink 0.7s step-end infinite;
+        }
+
+        .sur-titre.done {
+            border-right: none;
+        }
+
+        .meta {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .auteur {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .edition-date {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            color: #64748b;
+        }
+
+
+        .sur-titre {
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: var(--ag-red);
+            letter-spacing: 2px;
+            margin-bottom: 1.4rem;
+            display: block;
+        }
+
+
+        .article-content {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 1.05rem;
+            text-align: justify;
+            hyphens: auto;
+            line-height: 1.85;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .article-content p {
+            margin-bottom: 1.6rem;
+        }
+
+        .chapeau {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            max-width: 90%;
+        }
+
+
+        .article-figure {
+            margin: 30px 0;
+            padding: 0;
+        }
+
+        .article-figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(10%) contrast(1.1);
+        }
+
+        .article-figure figcaption {
+            font-size: 0.8rem;
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.3;
+            border-left: 3px solid #9d0000;
+            padding-left: 10px;
+        }
+
+        .credit {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+
+
+        .actions {
+            display: flex;
+            gap: 2rem;
+            align-items: left;
+            justify-content: left;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 10;
+        }
+
+
+
+        .icon {
+            fill: currentColor;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+        }
+
+        /* 6 — Colophon */
+        .colophon {
+            max-width: 680px;
+            margin: 2.5rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--slate-100);
+            text-align: center;
+        }
+
+        .colophon p {
+            font-family: 'ITC Avant Garde Std', sans-serif;
+            font-weight: 200;
+            font-size: 0.58rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--slate-400);
+            line-height: 1.8;
+        }
+
+
+
+        /* 6 — Bouton lettre à la rédaction */
+        .btn-lettre {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.4rem 0.7rem;
+            background: var(--ag-red);
+            color: var(--slate-100);
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: none;
+            letter-spacing: 0;
+            border-radius: 0;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.5s;
+            line-height: 1;
+        }
+
+        .btn-lettre:hover {
+            background: var(--ag-red-hover);
+            transform: scale(1.08);
+        }
+
+        .btn-lettre svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            display: block;
+            margin-top: 0;
+            position: relative;
+            top: 0;
+        }
+
+
+
+        .article h1 {
+            font-family: 'ITCAvantGardeCN', 'ITC Avant Garde Std', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 3.4rem;
+            line-height: 1.0;
+            letter-spacing: -0.02em;
+        }
+
+        /* 5 — Suppression lettrine */
+        .article-content p:first-of-type::first-letter {
+            float: left;
+            font-family: 'ITCAvantGardeCN', 'ITC Avant Garde Std', sans-serif;
+            font-size: 5.8rem;
+            font-weight: 700;
+            line-height: 0.82;
+            padding-top: 4px;
+            padding-right: 12px;
+            color: var(--ag-red);
+        }
+
+        /* 4 — H2 bordure rouge */
+        .article h2 {
+            font-size: 1.9rem;
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
+            border-top: 2px solid var(--ag-red);
+            padding-top: 1rem;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--slate-900);
+        }

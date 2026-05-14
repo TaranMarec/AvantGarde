@@ -10,6 +10,8 @@
     --slate-500: #64748b;
     --slate-600: #475569;
     --slate-900: #000000;
+
+    
 }
 :root.dark-theme {
 /* On garde le rouge mais on adoucit un peu les variantes claires */
