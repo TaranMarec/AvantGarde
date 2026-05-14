@@ -20,7 +20,9 @@
 }
 
 .content-area{
-    max-width: 99vw;
+    min-width: 0; /* MAGIQUE : permet au parent flex de rétrécir si besoin */
+    width: 100%;
+    overflow: hidden; /* Sécurité ultime */
     }
 
 /* Nom de l'édition*/
@@ -72,6 +74,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
+    max-width: 100%;
 
 }
 
@@ -576,98 +579,101 @@ textarea {
 
 
 /* --- CONFIGURATION DU CONTAINER MULTI-SLIDER --- */
+/* --- LE CONTENEUR (Le "cadre" du slider) --- */
 .slider-container {
-    position: relative /*lol*/;
-    overflow: hidden /*lol*/;
-    width: 100%;
-    padding: 1.5rem 0;
+    position: relative;
+    width: 100%;           /* Ne peut pas être plus large que le content-area */
+    max-width: 100%;       /* Sécurité supplémentaire */
+    overflow: hidden;      /* COUPE tout ce qui dépasse à droite */
+    margin: 1.5rem 0;
+    display: block;        /* Évite les comportements bizarres de l'inline-block */
 }
 
+/* --- LE RAIL (Ce qui bouge) --- */
 .slider-track {
-    display: flex /*lol*/;
-    flex-wrap: nowrap /*lol*/;
+    display: flex;
+    flex-wrap: nowrap;     /* Interdit aux cartes de revenir à la ligne */
     gap: 1.5rem;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
+    width: 100%;           /* Force le rail à démarrer à la largeur du parent */
+    transition: transform 0.5s ease;
 }
 
+/* --- LES CARTES --- */
 .slider-track .card {
-    flex: 0 0 calc(50% - 0.75rem) /*lol*/; 
-    min-width: calc(50% - 0.75rem) /*lol*/;
-    margin: 0 /*lol*/;
+    /* calc(50% - la moitié du gap) */
+    flex: 0 0 calc(50% - 0.75rem); 
+    min-width: calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
+    box-sizing: border-box; /* Pour que le padding ne s'ajoute pas à la largeur */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .slider-track .card {
-        flex: 0 0 100% /*lol*/;
-        min-width: 100% /*lol*/;
+        flex: 0 0 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    
+    /* Sur mobile, on affiche toujours les boutons ou on les cache 
+       si on préfère le scroll tactile */
+    .slider-btn {
+        opacity: 1 ;
+        visibility: visible !important;
+        width: 35px; /* Plus petit sur mobile */
+        height: 35px;
     }
 }
 
-/* --- BOUTONS EN PUR CSS (SANS SVG) --- */
+/* --- BOUTONS --- */
 .slider-btn {
-    position: absolute /*lol*/;
-    top: 50% /*lol*/;
+    position: absolute;
+    top: 50%;
     transform: translateY(-50%);
-    background: var(--slate-100) /*lol*/;
-    border: 1px solid var(--slate-200) /*lol*/;
-    width: 46px /*lol*/;
-    height: 46px /*lol*/;
-    border-radius: 50% /*lol*/;
-    z-index: 99 /*lol*/; /* Force le bouton à flotter au-dessus sans pousser le reste */
+    background: white;
+    border: 1px solid var(--slate-200);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    z-index: 10; /* Suffisant pour passer devant */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
-    box-shadow: 0 4px 12px var(--slate-900);
-    
-    /* Cache les boutons au repos */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
 }
 
-/* Affiche les boutons uniquement au survol du slider */
 .slider-container:hover .slider-btn {
     opacity: 1;
     visibility: visible;
 }
 
-.prev-btn { left: 20px ; }
-.next-btn { right: 20px ; }
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
 
-/* Dessin de la flèche gauche en CSS */
-.prev-btn::before {
+/* Flèches CSS */
+.prev-btn::before, .next-btn::before {
     content: '';
     width: 10px;
     height: 10px;
-    border-left: 2.5px solid var(--ag-red);
-    border-bottom: 2.5px solid var(--ag-red);
-    transform: rotate(45deg);
-    margin-left: 3px;
+    border-width: 2.5px 0 0 2.5px;
+    border-style: solid;
+    border-color: var(--ag-red);
     transition: border-color 0.3s;
 }
 
-/* Dessin de la flèche droite en CSS */
-.next-btn::before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    border-right: 2.5px solid var(--ag-red);
-    border-top: 2.5px solid var(--ag-red);
-    transform: rotate(45deg);
-    margin-right: 3px;
-    transition: border-color 0.3s;
-}
+.prev-btn::before { transform: rotate(-45deg); margin-left: 4px; }
+.next-btn::before { transform: rotate(135deg); margin-right: 4px; }
 
-/* Effets au survol des boutons */
 .slider-btn:hover {
-    background: var(--ag-red) ;
-    border-color: var(--ag-red) ;
+    background: var(--ag-red);
     transform: translateY(-50%) scale(1.1);
 }
 
 .slider-btn:hover::before {
-    border-color: var(--slate-100) ; /* La flèche devient blanche */
+    border-color: white;
 }
