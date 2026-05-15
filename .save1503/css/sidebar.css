@@ -1,0 +1,321 @@
+/**
+ * PROJECT: L'Avant-Garde
+ * FILE: menu.css
+ * DESC: Navigation principale, animations burger et état "scrolled".
+ */
+
+
+
+.sidebar {
+    position: sticky;
+    top: 20px;
+    /* Distance avec le haut de la fenêtre */
+    align-self: start;
+    /* Empêche la sidebar de s'étirer bizarrement */
+    height: auto;
+    /* Laisse le contenu définir la hauteur */
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--slate-300);
+    border-radius: 0.75rem;
+    outline: none;
+}
+
+/* Youtube*/
+
+.play-geant {
+    width: 100%;
+    max-width: 2000px;
+    height: auto;
+    color: #FF0000;
+}
+
+.yt-thumb {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #000;
+    text-decoration: none;
+    margin: 0.75rem;
+}
+
+.yt-thumb img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s ease, filter 0.4s ease;
+    opacity: 0.9;
+}
+
+.yt-thumb:hover img {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.btn1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: var(--slate-100);
+    border-radius: 50%;
+    color: var(--ag-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    transition: 0.3s;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+}
+
+.yt-card:hover .btn1 {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--ag-red);
+    color: white;
+    animation: pulseMax 1.5s infinite;
+}
+
+@keyframes pulseMax {
+    0% {
+        box-shadow: 0 0 0 0 rgba(206, 0, 26, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(206, 0, 26, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(206, 0, 26, 0);
+    }
+}
+
+.yt-thumb:hover img {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+/* Bloc JC Amélioré */
+.jc-card {
+    background: var(--slate-100);
+    border: 1px solid var(--slate-200);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.jc-header {
+    padding: 1.1rem 1.25rem;
+    background: linear-gradient(to right, var(--ag-soft-red), var(--slate-100));
+    border-bottom: 1px solid var(--slate-100);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.jc-logo {
+    height: 26px;
+    width: auto;
+    object-fit: contain;
+}
+
+.jc-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ag-red);
+    flex: 1;
+}
+
+.jc-voir-plus {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--slate-400);
+    text-transform: uppercase;
+}
+
+.jc-voir-plus:hover {
+    color: var(--ag-red);
+}
+
+.jc-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    border-bottom: 1px solid var(--slate-50);
+    transition: all 0.25s ease;
+    text-decoration: none;
+    align-items: center;
+}
+
+.jc-item:last-child {
+    border-bottom: none;
+}
+
+.jc-item:hover {
+    background-color: var(--ag-soft-red);
+    transform: translateX(5px);
+}
+
+.jc-indicator {
+    width: 3px;
+    height: 32px;
+    background: var(--slate-200);
+    border-radius: 2px;
+    transition: background 0.3s;
+    flex-shrink: 0;
+}
+
+.jc-item:hover .jc-indicator {
+    background: var(--ag-red);
+}
+
+.jc-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.jc-item-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--slate-900);
+    transition: color 0.2s;
+}
+
+.jc-item:hover .jc-item-title {
+    color: var(--ag-red);
+}
+
+.jc-item-date {
+    font-size: 0.68rem;
+    color: var(--slate-400);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+
+
+.most-read-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.most-read-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.1rem 1.25rem;
+    /* Même padding que .jc-item */
+    border-bottom: 1px solid var(--slate-50);
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+.most-read-item:last-child {
+    border-bottom: none;
+}
+
+/* Animation de décalage identique à JC */
+.most-read-item:hover {
+    background-color: var(--ag-soft-red);
+    transform: translateX(5px);
+}
+
+/* Le numéro : on garde le style imposant mais on ajuste la couleur */
+.most-read-number {
+    font-family: 'ITCAvantGardeCn', 'ITCAvantGarde', sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 0.8;
+    color: var(--slate-200);
+    flex-shrink: 0;
+    width: 2.2rem;
+    text-align: center;
+    margin-top: 0.2rem;
+    /* Aligné sur le haut du titre */
+    transition: color 0.3s ease;
+}
+
+.most-read-item:hover .most-read-number {
+    color: var(--ag-red);
+}
+
+/* Contenu texte aligné sur jc-content */
+.most-read-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.most-read-title {
+    margin: 0;
+    font-size: 0.88rem;
+    /* Identique à .jc-item-title */
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--slate-900);
+    transition: color 0.2s;
+}
+
+.most-read-item:hover .most-read-title {
+    color: var(--ag-red);
+}
+
+.most-read-category {
+    font-size: 0.68rem;
+    /* Identique à .jc-item-date */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--slate-400);
+}
+
+
+
+/* Nouvelle classe pour remplacer le style inline du div */
+.trim-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.trim-numero {
+    font-weight: 300;
+    font-size: 0.63rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--slate-500);
+    margin-top: 1.2rem;
+}
+
+.trim-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 200;
+    font-size: 0.7rem; /* CORRIGÉ : 10rem était beaucoup trop grand */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ag-red);
+    border-bottom: 1px solid rgba(185, 28, 28, 0.25);
+    padding-bottom: 1px;
+    transition: letter-spacing 0.3s;
+    margin-bottom: 0.25rem;
+    text-decoration: none; /* Optionnel : pour enlever le soulignement HTML par défaut */
+}
+
+/* Optionnel : un petit effet au survol pour rendre le bouton interactif */
+.trim-btn:hover {
+    letter-spacing: 0.15em;
+    border-bottom-color: var(--ag-red);
+}

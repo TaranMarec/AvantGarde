@@ -1,0 +1,78 @@
+<!-- 
+  PROJECT : L'Avant-Garde
+  FILE    : categorie.html
+  DESC    : Archive thématique - Liste chronologique des articles par rubrique.
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script>
+        // Ce script s'exécute en une fraction de milliseconde avant l'affichage
+        let theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-theme');
+        }
+    </script>
+  <title>L'Avant-Garde – Maquette édition hebdo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script src="./js/fetch.js" defer></script>
+  <script src="./js/menu.js" defer></script>
+  <script src="./js/video.js" defer></script>
+  <script src="./js/sidebar.js" defer></script>
+  <script src="./js/progression.js" defer></script>
+  <script src="./js/darkMode.js" defer></script>
+</head>
+
+<body class="bg-slate-100">
+  <div id="progress-bar-home"></div>
+
+
+  <header id="main-header">
+    <div id="header-placeholder"></div>
+  </header>
+
+  <main class="container main-content">
+    <header class="edition-header">
+      <div class="edition-badge">
+        <span class="edition-type">Édition hebdomadaire</span>
+        <span class="edition-dot"></span>
+        <span class="edition-date">4 décembre 2025</span>
+      </div>
+    </header>
+    <div class="grid-layout">
+
+      <section class="content-area">
+
+
+        <div class="articleLarge-placeholder"></div>
+        <div class="articleLarge-placeholder"></div>
+        <div class="articleLarge-placeholder"></div>
+        <div class="articleLarge-placeholder"></div>
+        <div class="articleLarge-placeholder"></div>
+        <div class="articleLarge-placeholder"></div>      
+
+      </section>
+
+      <aside class="sidebar" id="sidebar-aside">
+        <div id="sidebar-placeholder"></div>
+      </aside>
+    </div>
+
+  </main>
+
+  <div id="newsletter-placeholder"></div>
+  <footer class="site-footer">
+    <div id="footer-placeholder"></div>
+  </footer>
+</body>
+
+</html>
