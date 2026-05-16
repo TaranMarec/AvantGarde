@@ -1,0 +1,125 @@
+.archive-trim-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.archive-trim-numero {
+    font-weight: 300;
+    font-size: 0.63rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--slate-500);
+    margin-top: 1.2rem;
+}
+
+
+
+/* ==========================================================================
+       NOUVEAUX STYLES : PAGINATION
+       ========================================================================== */
+    .pagination-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin: 40px 0;
+    }
+
+    .pagination-number, .pagination-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: var(--slate-100);
+      color: var(--ag-red);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      border: 1px solid var(--ag-red);
+      transition: all 0.2s ease;
+    }
+
+    .pagination-number:hover, .pagination-arrow:hover:not(.disabled) {
+      background-color: var(--slate-200);
+      border-color: var(--ag-red-hover);
+    }
+
+    .pagination-number.active {
+      background-color: var(--slate---ag-soft-red);
+      color: var(--slate-900);
+      border-color: var(--slate-900);
+    }
+
+    .pagination-arrow.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .pagination-ellipsis {
+      color: var(--ag-red-hover);
+      padding: 0 4px;
+    }
+
+
+
+
+    /* ==========================================================================
+       NOUVEAUX STYLES : ENCADRÉ ÉDITION HEBDOMADAIRE (Format Barre Recherche)
+       ========================================================================== */
+    .weekly-edition-widget {
+      margin-bottom: 5px;
+    }
+
+    .weekly-edition-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--slate-100);
+      border: 1px solid var(--slate-300);
+      padding: 0px 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .weekly-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .weekly-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--slate-900);
+      font-weight: 600;
+    }
+
+    .weekly-date {
+      font-size: 14px;
+      color: var(--slate-900);
+      font-weight: 500;
+    }
+
+    .weekly-icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      background-color: var(--slate-100);
+      color: var(--ag-red);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .weekly-icon-btn:hover {
+      background-color: var(--slate-200);
+      color: var(--ag-red-hover);
+    }
