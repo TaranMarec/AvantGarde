@@ -15,7 +15,7 @@
      /*transform: rotate(-0.3deg);
      transition: background 0.3s ease, border 0.3s ease;
       Optionnel : pour une transition douce */
-      
+
  }
 
  @media (max-width: 768px) {
@@ -27,6 +27,11 @@
  /* 2 — Machine à écrire */
  .sur-titre {
      border-right: 2px solid transparent;
+ }
+
+ .sur-titre a:hover {
+     color: var(--ag-red-hover);
+     font-size: 0.7rem;
  }
 
  .sur-titre.typing {
@@ -49,12 +54,27 @@
      margin-bottom: 30px;
  }
 
+ .etiquettes {
+     font-weight: 900;
+     text-transform: uppercase;
+     font-size: 0.85rem;
+ }
+
+ .etiquettes:hover {
+     color: var(--ag-red-hover);
+ }
+
  .auteur {
      font-family: 'Inter', sans-serif;
      font-weight: 700;
      text-transform: uppercase;
      font-size: 0.85rem;
  }
+
+ .auteur:hover {
+     color: var(--ag-red-hover);
+ }
+
 
  .edition-date {
      font-family: 'Inter', sans-serif;
@@ -95,7 +115,7 @@
      font-weight: 300;
      font-style: italic;
      font-size: 1.1rem;
-     color: #444;
+     color: var(--slate-600);
      margin-bottom: 25px;
      line-height: 1.6;
      max-width: 90%;
@@ -116,10 +136,11 @@
 
  .article-figure figcaption {
      font-size: 0.8rem;
-     color: #555;
+     color: var(--slate-600);
      margin-top: 10px;
      line-height: 1.3;
-     border-left: 3px solid #9d0000;
+     border-left: 3px solid var(--ag-red);
+     ;
      padding-left: 10px;
  }
 
@@ -328,3 +349,181 @@
      cursor: pointer;
      font-weight: bold;
  }
+
+ .partager {
+     display: inline-flex;
+     align-items: center;
+     gap: 0.4rem;
+     font-family: 'ITCAvantGarde', sans-serif;
+     font-size: 0.72rem;
+     font-weight: 600;
+     text-transform: uppercase;
+     letter-spacing: 0.1em;
+     color: var(--slate-500);
+     cursor: pointer;
+ }
+
+ .partager:hover {
+     color: var(--ag-red-hover);
+ }
+
+
+
+ /* Bloc À lire aussi — colonnes animées */
+ .alire-a {
+     max-width: 1300px;
+     margin: 1.5rem auto 2rem;
+     padding: 0 0.5rem;
+ }
+
+ .alire-b {
+     background: var(--slate-100);
+     border: 1px solid var(--slate-200);
+ }
+
+ .alire-c {
+     font-family: 'ITCAvantGarde', sans-serif;
+     font-weight: 800;
+     font-size: 0.72rem;
+     text-transform: uppercase;
+     letter-spacing: 0.06em;
+     color: var(--ag-red);
+     flex: 1;
+ }
+
+ .alire-head{
+     padding: 1.1rem 1.25rem;
+     background: linear-gradient(to right, var(--ag-soft-red), var(--slate-100));
+     border-bottom: 1px solid var(--slate-100);
+     display: flex;
+     align-items: center;
+     gap: 0.8rem;
+ }
+
+ .alire-col {
+     display: flex;
+     flex-direction: column;
+     gap: 0.6rem;
+     padding: 1.5rem 1.5rem 2rem;
+     border-right: 1px solid var(--slate-100);
+     text-decoration: none;
+     color: var(--slate-900);
+     transition: background 0.25s, transform 0.25s;
+     position: relative;
+ }
+
+ .alire-col:last-child {
+     border-right: none;
+ }
+
+ .alire-col::before {
+     content: '';
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 2px;
+     height: 0;
+     background: var(--ag-red);
+     transition: height 0.3s ease;
+ }
+
+ .alire-col:hover {
+     background: var(--slate-100);
+     transform: translateY(-2px);
+ }
+
+ .alire-col:hover::before {
+     height: 100%;
+ }
+
+ .alire-col:hover .alire-title {
+     color: var(--ag-red);
+ }
+
+ .alire-cat {
+     font-family: 'Inter', sans-serif;
+     font-size: 0.58rem;
+     font-weight: 700;
+     text-transform: uppercase;
+     letter-spacing: 0.12em;
+     color: var(--ag-red);
+ }
+
+ .alire-title {
+     font-family: 'ITCAvantGardeCn', 'ITCAvantGarde', sans-serif;
+     font-weight: 700;
+     font-size: 1rem;
+     line-height: 1.3;
+     color: var(--slate-900);
+     transition: color 0.2s;
+ }
+
+ .alire-desc {
+     font-family: 'Inter', sans-serif;
+     font-size: 0.72rem;
+     color: var(--slate-500);
+     line-height: 1.5;
+     margin-top: 0.2rem;
+ }
+
+ .alire-meta {
+     font-family: 'Inter', sans-serif;
+     font-size: 0.6rem;
+     color: var(--slate-400);
+     margin-top: auto;
+     padding-top: 1rem;
+     border-top: 1px solid var(--slate-100);
+ }
+
+/* ==========================================================================
+   1. Style de base : Grand écran (Ordinateur)
+   ========================================================================== */
+.alire-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* On enlève le gap car tu gères déjà les séparations avec les bordures */
+    gap: 0; 
+    width: 100%;
+}
+
+/* ==========================================================================
+   2. Écran Moyen (Tablette) : 2 colonnes, 2 articles maximum
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .alire-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Masque le 3ème et le 4ème article */
+    .alire-col:nth-child(n+3) {
+        display: none;
+    }
+
+    /* Ajustement des bordures pour 2 colonnes */
+    .alire-col:nth-child(1) {
+        border-right: 1px solid var(--slate-100); /* Seul le premier garde sa bordure droite */
+    }
+    .alire-col:nth-child(2) {
+        border-right: none; /* Le deuxième est au bord droit de l'écran */
+    }
+}
+
+/* ==========================================================================
+   3. Petit Écran (Mobile) : 1 colonne, 1 seul article maximum
+   ========================================================================== */
+@media (max-width: 600px) {
+    .alire-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Masque à partir du 2ème article */
+    .alire-col:nth-child(n+2) {
+        display: none;
+    }
+
+    /* Ajustement des bordures pour 1 colonne */
+    .alire-col:nth-child(1) {
+        border-right: none; /* Plus besoin de bordure latérale sur mobile */
+        border-bottom: 1px solid var(--slate-100); /* Optionnel: une fine bordure en bas si tu as du contenu en dessous */
+    }
+}

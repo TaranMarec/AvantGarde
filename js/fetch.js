@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
         ['./includes/newsletter.html', '#newsletter-placeholder'],
         ['./includes/sidebar.html', '#sidebar-placeholder'],
         ['./includes/articleLarge.html', '.articleLarge-placeholder'],
+        ['./includes/articleLargeR.html', '.articleLargeR-placeholder'],
         ['./includes/articles.html', '.articles-placeholder'],
+        ['./includes/articlesSlider.html', '.articlesSlider-placeholder'],
         ['./includes/edito.html', '.edito-placeholder']
     ];
 
