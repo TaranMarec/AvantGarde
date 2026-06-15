@@ -183,8 +183,7 @@
 .logo-link:hover .logo-img {
     /* L'image grossit de 8% et monte de 5px */
     transform: scale(1.08) translateY(-4px);
-    /* Ajout d'une ombre douce pour l'effet de décollement */
-    filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.12));
+
 }
 
 .logo-link:hover .tagline {

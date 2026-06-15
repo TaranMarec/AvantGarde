@@ -159,7 +159,7 @@
 
 .jc-item:hover {
     background-color: var(--ag-soft-red);
-    transform: translateX(5px);
+    /*transform: translateX(5px);*/
 }
 
 .jc-indicator {
@@ -226,7 +226,7 @@
 /* Animation de décalage identique à JC */
 .most-read-item:hover {
     background-color: var(--ag-soft-red);
-    transform: translateX(5px);
+   /* transform: translateX(5px);*/
 }
 
 /* Le numéro : on garde le style imposant mais on ajuste la couleur */
@@ -272,9 +272,7 @@
 .most-read-category {
     font-size: 0.68rem;
     /* Identique à .jc-item-date */
-    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
     color: var(--slate-400);
 }
 
